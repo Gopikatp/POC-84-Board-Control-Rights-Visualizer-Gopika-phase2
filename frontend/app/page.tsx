@@ -14,6 +14,11 @@ import ProtectiveRights from "@/components/dashboard/ProtectiveRights";
 import FilterBar from "@/components/dashboard/FilterBar";
 
 import api from "@/lib/api";
+import VotingPowerBreakdown from "@/components/dashboard/VotingPowerBreakdown";
+import BoardMajority from "@/components/dashboard/BoardMajority";
+import GovernanceHealthScore from "@/components/dashboard/GovernanceHealthScore";
+import DecisionSimulator from "@/components/dashboard/DecisionSimulator";
+import GovernanceTimeline from "@/components/dashboard/GovernanceTimeline";
 
 interface Company {
   company: string;
@@ -108,22 +113,40 @@ export default function Home() {
         )}
 
         <div className="space-y-6">
-          <BoardSeatMap
-            company={selectedCompany}
-          />
+  <BoardSeatMap
+    company={selectedCompany}
+  />
 
-          <ControlMeter
-            company={selectedCompany}
-          />
+  <VotingPowerBreakdown
+    company={selectedCompany}
+  />
 
-          <ScenarioCompare
-            company={selectedCompany}
-          />
+  <BoardMajority
+    company={selectedCompany}
+  />
 
-          <ProtectiveRights
-            company={selectedCompany}
-          />
-        </div>
+  <ControlMeter
+    company={selectedCompany}
+  />
+
+  <GovernanceHealthScore
+    company={selectedCompany}
+  />
+
+  <DecisionSimulator
+    company={selectedCompany}
+  />
+
+  <ScenarioCompare
+    company={selectedCompany}
+  />
+
+  <GovernanceTimeline />
+
+  <ProtectiveRights
+    company={selectedCompany}
+  />
+</div>
       </div>
     </DashboardLayout>
   );

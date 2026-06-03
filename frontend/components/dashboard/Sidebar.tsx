@@ -82,6 +82,16 @@ export default function Sidebar({
               <p className="mt-3">
                 Control Score: {selectedCompany.control_score}
               </p>
+
+              <div className="mt-3">
+                <span className="inline-block px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-sm">
+                  {selectedCompany.control_score >= 70
+                    ? "Investor Dominated"
+                    : selectedCompany.control_score >= 40
+                    ? "Balanced Governance"
+                    : "Founder Dominated"}
+                </span>
+              </div>
             </CardContent>
           </Card>
 
@@ -117,6 +127,38 @@ export default function Sidebar({
                   largely stays with the founding team.
                 </p>
               )}
+            </CardContent>
+          </Card>
+
+          <Card className="bg-slate-950 border-slate-800 text-white">
+            <CardHeader>
+              <CardTitle>
+                Dataset Summary
+              </CardTitle>
+            </CardHeader>
+
+            <CardContent>
+              Synthetic governance dataset.
+
+              <br />
+              <br />
+
+              Companies: 8
+
+              <br />
+
+              Founder Controlled: 3
+
+              <br />
+
+              Investor Controlled: 5
+
+              <br />
+              <br />
+
+              Includes board compositions,
+              protective rights, and governance
+              control scenarios.
             </CardContent>
           </Card>
 

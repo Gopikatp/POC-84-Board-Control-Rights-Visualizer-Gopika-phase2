@@ -12,6 +12,10 @@ export default function ScenarioCompare({
 }: Props) {
   if (!company) return null;
 
+  const controlShift =
+    (company.founder_seats + 1) -
+    Math.max(company.investor_seats - 1, 0);
+
   return (
     <div className="bg-[#0B1117] border border-slate-800 rounded-lg p-6">
       <h2 className="text-xl font-semibold mb-6">
@@ -19,22 +23,17 @@ export default function ScenarioCompare({
       </h2>
 
       <div className="grid grid-cols-2 gap-4">
-
         <div className="border border-slate-700 rounded-lg p-4">
           <h3 className="font-semibold mb-2">
             Current Governance
           </h3>
 
           <p>
-            Founder Seats:
-            {" "}
-            {company.founder_seats}
+            Founder Seats: {company.founder_seats}
           </p>
 
           <p>
-            Investor Seats:
-            {" "}
-            {company.investor_seats}
+            Investor Seats: {company.investor_seats}
           </p>
         </div>
 
@@ -44,21 +43,30 @@ export default function ScenarioCompare({
           </h3>
 
           <p>
-            Founder Seats:
-            {" "}
-            {company.founder_seats + 1}
+            Founder Seats: {company.founder_seats + 1}
           </p>
 
           <p>
-            Investor Seats:
-            {" "}
-            {Math.max(
+            Investor Seats: {Math.max(
               company.investor_seats - 1,
               0
             )}
           </p>
         </div>
+      </div>
 
+      <div className="mt-4 border border-slate-700 rounded-lg p-4">
+        <h4 className="font-semibold mb-2">
+          Governance Impact
+        </h4>
+
+        <p>
+          Net Control Shift: {controlShift}
+        </p>
+
+        <p className="text-slate-400 mt-2">
+          Positive values indicate increased founder influence.
+        </p>
       </div>
     </div>
   );

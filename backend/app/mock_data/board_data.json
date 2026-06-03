@@ -4,11 +4,7 @@
     "founder_seats": 2,
     "investor_seats": 3,
     "independent_seats": 1,
-    "protective_rights": [
-      "budget_approval",
-      "new_financing",
-      "board_approval"
-    ],
+    "protective_rights": ["budget_approval", "new_financing", "board_approval"],
     "control_score": 60
   },
   {
@@ -16,10 +12,55 @@
     "founder_seats": 3,
     "investor_seats": 2,
     "independent_seats": 1,
-    "protective_rights": [
-      "budget_approval",
-      "acquisition_approval"
-    ],
+    "protective_rights": ["budget_approval", "acquisition_approval"],
     "control_score": 45
+  },
+  {
+    "company": "FinEdge Capital",
+    "founder_seats": 1,
+    "investor_seats": 4,
+    "independent_seats": 1,
+    "protective_rights": ["board_approval", "new_financing"],
+    "control_score": 80
+  },
+  {
+    "company": "ScaleForge",
+    "founder_seats": 3,
+    "investor_seats": 3,
+    "independent_seats": 1,
+    "protective_rights": ["budget_approval", "board_approval"],
+    "control_score": 50
+  },
+  {
+    "company": "Vertex Health",
+    "founder_seats": 4,
+    "investor_seats": 2,
+    "independent_seats": 1,
+    "protective_rights": ["budget_approval"],
+    "control_score": 35
+  },
+  {
+    "company": "CloudMint",
+    "founder_seats": 2,
+    "investor_seats": 2,
+    "independent_seats": 2,
+    "protective_rights": ["new_financing"],
+    "control_score": 50
+  },
+  {
+    "company": "QuantumPay",
+    "founder_seats": 3,
+    "investor_seats": 1,
+    "independent_seats": 2,
+    "protective_rights": ["budget_approval", "board_approval"],
+    "control_score": 30
+  },
+  {
+    "company": "Apex Mobility",
+    "founder_seats": 2,
+    "investor_seats": 4,
+    "independent_seats": 1,
+    "protective_rights": ["new_financing", "acquisition_approval"],
+    "control_score": 75
   }
 ]

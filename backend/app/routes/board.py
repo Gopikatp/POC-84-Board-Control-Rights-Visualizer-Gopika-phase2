@@ -15,10 +15,23 @@ def get_companies():
 
 @router.get("/metrics")
 def get_metrics():
+
+    founder_controlled = sum(
+        1
+        for company in data
+        if company["founder_seats"] > company["investor_seats"]
+    )
+
+    investor_controlled = sum(
+        1
+        for company in data
+        if company["investor_seats"] >= company["founder_seats"]
+    )
+
     return {
         "companies": len(data),
-        "founder_controlled": 1,
-        "investor_controlled": 1
+        "founder_controlled": founder_controlled,
+        "investor_controlled": investor_controlled,
     }
 
 @router.get("/rights")

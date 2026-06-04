@@ -29,7 +29,7 @@ export default function BoardMajority({
       : "Shared Governance";
 
   return (
-    <div className="bg-[#0B1117] border border-slate-800 rounded-lg p-6">
+    <div className="bg-slate-950 border border-slate-800 rounded-lg p-6 text-white">
       <h2 className="text-xl font-semibold mb-4">
         Board Majority Analysis
       </h2>

@@ -55,19 +55,6 @@ export default function ScenarioCompare({
         </div>
       </div>
 
-      <div className="mt-4 border border-slate-700 rounded-lg p-4">
-        <h4 className="font-semibold mb-2">
-          Governance Impact
-        </h4>
-
-        <p>
-          Net Control Shift: {controlShift}
-        </p>
-
-        <p className="text-slate-400 mt-2">
-          Positive values indicate increased founder influence.
-        </p>
-      </div>
     </div>
   );
 }

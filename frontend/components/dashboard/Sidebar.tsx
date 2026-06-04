@@ -1,6 +1,11 @@
 import DownloadData from "./DownloadData";
 import GovernanceAlerts from "./GovernanceAlerts";
 
+import VotingPowerBreakdown from "./VotingPowerBreakdown";
+import BoardMajority from "./BoardMajority";
+import GovernanceHealthScore from "./GovernanceHealthScore";
+import GovernanceTimeline from "./GovernanceTimeline";
+
 import {
   Card,
   CardContent,
@@ -27,24 +32,31 @@ export default function Sidebar({
     <div className="space-y-4">
       <Card className="bg-slate-950 border-slate-800 text-white">
         <CardHeader>
-          <CardTitle>Why This Matters</CardTitle>
+          <CardTitle>
+            Why This Matters
+          </CardTitle>
         </CardHeader>
+
         <CardContent>
-          Board control rights determine who can approve financings,
-          acquisitions, leadership changes, and governance decisions.
-          Small shifts in board composition can significantly alter
-          company control.
+          Board control rights determine who can approve
+          financings, acquisitions, leadership changes,
+          and governance decisions. Small shifts in board
+          composition can significantly alter company control.
         </CardContent>
       </Card>
 
       <Card className="bg-slate-950 border-slate-800 text-white">
         <CardHeader>
-          <CardTitle>Who Controls The Rail</CardTitle>
+          <CardTitle>
+            Who Controls The Rail
+          </CardTitle>
         </CardHeader>
+
         <CardContent>
-          Founders, investors, directors, and protective-right
-          holders collectively shape governance outcomes and
-          strategic decision-making authority.
+          Founders, investors, directors, and
+          protective-right holders collectively shape
+          governance outcomes and strategic decision-making
+          authority.
         </CardContent>
       </Card>
 
@@ -52,7 +64,9 @@ export default function Sidebar({
         <>
           <Card className="bg-slate-950 border-slate-800 text-white">
             <CardHeader>
-              <CardTitle>Selected Company</CardTitle>
+              <CardTitle>
+                Selected Company
+              </CardTitle>
             </CardHeader>
 
             <CardContent>
@@ -61,19 +75,27 @@ export default function Sidebar({
               </p>
 
               <p>
-                Founder Seats: {selectedCompany.founder_seats}
+                Founder Seats:
+                {" "}
+                {selectedCompany.founder_seats}
               </p>
 
               <p>
-                Investor Seats: {selectedCompany.investor_seats}
+                Investor Seats:
+                {" "}
+                {selectedCompany.investor_seats}
               </p>
 
               <p>
-                Independent Seats: {selectedCompany.independent_seats}
+                Independent Seats:
+                {" "}
+                {selectedCompany.independent_seats}
               </p>
 
               <p className="mt-3">
-                Control Score: {selectedCompany.control_score}
+                Control Score:
+                {" "}
+                {selectedCompany.control_score}
               </p>
 
               <div className="mt-3">
@@ -87,6 +109,45 @@ export default function Sidebar({
               </div>
             </CardContent>
           </Card>
+
+          <VotingPowerBreakdown
+            company={selectedCompany}
+          />
+
+          <BoardMajority
+            company={selectedCompany}
+          />
+
+          <GovernanceHealthScore
+            company={selectedCompany}
+          />
+
+          <Card className="bg-slate-950 border-slate-800 text-white">
+            <CardHeader>
+              <CardTitle>
+                Governance Impact
+              </CardTitle>
+            </CardHeader>
+
+            <CardContent>
+              <p>
+                Net Control Shift:
+                {" "}
+                {(selectedCompany.founder_seats + 1) -
+                  Math.max(
+                    selectedCompany.investor_seats - 1,
+                    0
+                  )}
+              </p>
+
+              <p className="mt-2 text-slate-400">
+                Positive values indicate
+                increased founder influence.
+              </p>
+            </CardContent>
+          </Card>
+
+          <GovernanceTimeline />
 
           <Card className="bg-slate-950 border-slate-800 text-white">
             <CardHeader>
@@ -147,7 +208,8 @@ export default function Sidebar({
             <CardContent>
               Synthetic governance dataset.
 
-              <br /><br />
+              <br />
+              <br />
 
               Companies: 8
 
@@ -159,7 +221,8 @@ export default function Sidebar({
 
               Investor Controlled: 5
 
-              <br /><br />
+              <br />
+              <br />
 
               Includes board compositions,
               protective rights, and governance
@@ -179,7 +242,8 @@ export default function Sidebar({
               board-control disclosures and governance
               structures commonly referenced in SEC EDGAR filings.
 
-              <br /><br />
+              <br />
+              <br />
 
               Synthetic governance datasets are used for
               demonstration purposes.

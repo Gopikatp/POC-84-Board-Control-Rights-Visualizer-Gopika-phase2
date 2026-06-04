@@ -10,15 +10,11 @@ import BoardSeatMap from "@/components/dashboard/BoardSeatMap";
 import ControlMeter from "@/components/dashboard/ControlMeter";
 import ScenarioCompare from "@/components/dashboard/ScenarioCompare";
 import ProtectiveRights from "@/components/dashboard/ProtectiveRights";
+import DecisionSimulator from "@/components/dashboard/DecisionSimulator";
 
 import FilterBar from "@/components/dashboard/FilterBar";
 
 import api from "@/lib/api";
-import VotingPowerBreakdown from "@/components/dashboard/VotingPowerBreakdown";
-import BoardMajority from "@/components/dashboard/BoardMajority";
-import GovernanceHealthScore from "@/components/dashboard/GovernanceHealthScore";
-import DecisionSimulator from "@/components/dashboard/DecisionSimulator";
-import GovernanceTimeline from "@/components/dashboard/GovernanceTimeline";
 
 interface Company {
   company: string;
@@ -113,40 +109,26 @@ export default function Home() {
         )}
 
         <div className="space-y-6">
-  <BoardSeatMap
-    company={selectedCompany}
-  />
+          <BoardSeatMap
+            company={selectedCompany}
+          />
 
-  <VotingPowerBreakdown
-    company={selectedCompany}
-  />
+          <ControlMeter
+            company={selectedCompany}
+          />
 
-  <BoardMajority
-    company={selectedCompany}
-  />
+          <DecisionSimulator
+            company={selectedCompany}
+          />
 
-  <ControlMeter
-    company={selectedCompany}
-  />
+          <ScenarioCompare
+            company={selectedCompany}
+          />
 
-  <GovernanceHealthScore
-    company={selectedCompany}
-  />
-
-  <DecisionSimulator
-    company={selectedCompany}
-  />
-
-  <ScenarioCompare
-    company={selectedCompany}
-  />
-
-  <GovernanceTimeline />
-
-  <ProtectiveRights
-    company={selectedCompany}
-  />
-</div>
+          <ProtectiveRights
+            company={selectedCompany}
+          />
+        </div>
       </div>
     </DashboardLayout>
   );

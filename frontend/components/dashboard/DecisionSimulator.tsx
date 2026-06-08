@@ -20,20 +20,58 @@ export default function DecisionSimulator({
 
   if (!company) return null;
 
-  const total =
+  const totalSeats =
     company.founder_seats +
     company.investor_seats +
     company.independent_seats;
 
-  const threshold =
-    Math.floor(total / 2) + 1;
+  let threshold = 0;
+  let availableVotes = 0;
 
-  const votes =
-    company.investor_seats +
-    company.independent_seats;
+  switch (decision) {
+    case "Budget Approval":
+      threshold = Math.ceil(totalSeats * 0.5);
+
+      availableVotes =
+        company.founder_seats +
+        company.independent_seats;
+      break;
+
+    case "New Financing":
+      threshold = Math.ceil(totalSeats * 0.6);
+
+      availableVotes =
+        company.investor_seats +
+        company.independent_seats;
+      break;
+
+    case "Acquisition":
+      threshold = Math.ceil(totalSeats * 0.75);
+
+      availableVotes =
+        company.investor_seats +
+        company.founder_seats;
+      break;
+
+    case "Board Expansion":
+      threshold = totalSeats;
+
+      availableVotes =
+        company.founder_seats +
+        company.investor_seats +
+        company.independent_seats;
+      break;
+
+    default:
+      threshold = Math.ceil(totalSeats * 0.5);
+
+      availableVotes =
+        company.founder_seats +
+        company.independent_seats;
+  }
 
   const approved =
-    votes >= threshold;
+    availableVotes >= threshold;
 
   return (
     <div className="bg-[#0B1117] border border-slate-800 rounded-lg p-6">
@@ -54,12 +92,34 @@ export default function DecisionSimulator({
         <option>Board Expansion</option>
       </select>
 
-      <p>Votes Needed: {threshold}</p>
-      <p>Available Votes: {votes}</p>
+      <div className="space-y-2">
+        <p>
+          Total Board Seats: {totalSeats}
+        </p>
 
-      <p className="mt-3 font-semibold">
-        Result: {approved ? "✓ Approved" : "✗ Rejected"}
-      </p>
+        <p>
+          Votes Needed: {threshold}
+        </p>
+
+        <p>
+          Available Votes: {availableVotes}
+        </p>
+      </div>
+
+      <div className="mt-4">
+        <p
+          className={`font-semibold ${
+            approved
+              ? "text-green-400"
+              : "text-red-400"
+          }`}
+        >
+          Result:{" "}
+          {approved
+            ? "✓ Approved"
+            : "✗ Rejected"}
+        </p>
+      </div>
     </div>
   );
 }

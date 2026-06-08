@@ -18,16 +18,50 @@ interface Company {
   founder_seats: number;
   investor_seats: number;
   independent_seats: number;
-  control_score: number;
+  stage: string;
+  protective_rights: string[];
+}
+
+interface Metrics {
+  companies: number;
+  founder_controlled: number;
+  investor_controlled: number;
 }
 
 interface Props {
   selectedCompany: Company | null;
+  metrics: Metrics;
 }
 
 export default function Sidebar({
   selectedCompany,
+  metrics,
 }: Props) {
+  if (!selectedCompany) {
+    return null;
+  }
+
+  const founderProposal =
+    selectedCompany.founder_seats <
+    selectedCompany.investor_seats;
+
+  const proposedFounderSeats =
+    founderProposal
+      ? selectedCompany.founder_seats + 1
+      : selectedCompany.founder_seats;
+
+  const proposedInvestorSeats =
+    founderProposal
+      ? Math.max(
+          selectedCompany.investor_seats - 1,
+          0
+        )
+      : selectedCompany.investor_seats + 1;
+
+  const controlShift =
+    proposedFounderSeats -
+    proposedInvestorSeats;
+
   return (
     <div className="space-y-4">
       <Card className="bg-slate-950 border-slate-800 text-white">
@@ -60,201 +94,200 @@ export default function Sidebar({
         </CardContent>
       </Card>
 
-      {selectedCompany && (
-        <>
-          <Card className="bg-slate-950 border-slate-800 text-white">
-            <CardHeader>
-              <CardTitle>
-                Selected Company
-              </CardTitle>
-            </CardHeader>
+      <Card className="bg-slate-950 border-slate-800 text-white">
+        <CardHeader>
+          <CardTitle>
+            Selected Company
+          </CardTitle>
+        </CardHeader>
 
-            <CardContent>
-              <p className="font-semibold mb-3">
-                {selectedCompany.company}
-              </p>
+        <CardContent>
+          <p className="font-semibold mb-3">
+            {selectedCompany.company}
+          </p>
 
-              <p>
-                Founder Seats:
-                {" "}
-                {selectedCompany.founder_seats}
-              </p>
+          <p>
+            Founder Seats:{" "}
+            {selectedCompany.founder_seats}
+          </p>
 
-              <p>
-                Investor Seats:
-                {" "}
-                {selectedCompany.investor_seats}
-              </p>
+          <p>
+            Investor Seats:{" "}
+            {selectedCompany.investor_seats}
+          </p>
 
-              <p>
-                Independent Seats:
-                {" "}
-                {selectedCompany.independent_seats}
-              </p>
+          <p>
+            Independent Seats:{" "}
+            {selectedCompany.independent_seats}
+          </p>
 
-              <p className="mt-3">
-                Control Score:
-                {" "}
-                {selectedCompany.control_score}
-              </p>
+          <p className="mt-3">
+            Total Seats:{" "}
+            {selectedCompany.founder_seats +
+              selectedCompany.investor_seats +
+              selectedCompany.independent_seats}
+          </p>
 
-              <div className="mt-3">
-                <span className="inline-block px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-sm">
-                  {selectedCompany.control_score >= 70
-                    ? "Investor Dominated"
-                    : selectedCompany.control_score >= 40
-                    ? "Balanced Governance"
-                    : "Founder Dominated"}
-                </span>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="mt-3">
+            <span className="inline-block px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-sm">
+              {selectedCompany.investor_seats >
+              selectedCompany.founder_seats
+                ? "Investor Dominated"
+                : selectedCompany.founder_seats >
+                  selectedCompany.investor_seats
+                ? "Founder Dominated"
+                : "Balanced Governance"}
+            </span>
+          </div>
+        </CardContent>
+      </Card>
 
-          <VotingPowerBreakdown
+      <VotingPowerBreakdown
+        company={selectedCompany}
+      />
+
+      <BoardMajority
+        company={selectedCompany}
+      />
+
+      <GovernanceHealthScore
+        company={selectedCompany}
+      />
+
+      <Card className="bg-slate-950 border-slate-800 text-white">
+        <CardHeader>
+          <CardTitle>
+            Governance Impact
+          </CardTitle>
+        </CardHeader>
+
+        <CardContent>
+          <p>
+            Net Control Shift:{" "}
+            {controlShift}
+          </p>
+
+          <p className="mt-2 text-slate-400">
+            Positive values indicate
+            increased founder influence.
+          </p>
+        </CardContent>
+      </Card>
+
+      <GovernanceTimeline
+        company={selectedCompany}
+      />
+
+      <Card className="bg-slate-950 border-slate-800 text-white">
+        <CardHeader>
+          <CardTitle>
+            Governance Intelligence
+          </CardTitle>
+        </CardHeader>
+
+        <CardContent>
+          {selectedCompany.investor_seats >
+            selectedCompany.founder_seats && (
+            <p>
+              Investor influence is dominant.
+              Strategic approvals may require
+              significant investor participation.
+            </p>
+          )}
+
+          {selectedCompany.founder_seats >
+            selectedCompany.investor_seats && (
+            <p>
+              Founder influence remains strong.
+              Governance leverage largely stays
+              with the founding team.
+            </p>
+          )}
+
+          {selectedCompany.founder_seats ===
+            selectedCompany.investor_seats && (
+            <p>
+              Governance influence is balanced.
+              Founders and investors share
+              decision-making authority.
+            </p>
+          )}
+        </CardContent>
+      </Card>
+
+      <Card className="bg-slate-950 border-slate-800 text-white">
+        <CardHeader>
+          <CardTitle>
+            Governance Alerts
+          </CardTitle>
+        </CardHeader>
+
+        <CardContent>
+          <GovernanceAlerts
             company={selectedCompany}
           />
+        </CardContent>
+      </Card>
 
-          <BoardMajority
-            company={selectedCompany}
-          />
+      <Card className="bg-slate-950 border-slate-800 text-white">
+        <CardHeader>
+          <CardTitle>
+            Dataset Summary
+          </CardTitle>
+        </CardHeader>
 
-          <GovernanceHealthScore
-            company={selectedCompany}
-          />
+        <CardContent>
+          Synthetic governance dataset.
 
-          <Card className="bg-slate-950 border-slate-800 text-white">
-            <CardHeader>
-              <CardTitle>
-                Governance Impact
-              </CardTitle>
-            </CardHeader>
+          <br />
+          <br />
 
-            <CardContent>
-              <p>
-                Net Control Shift:
-                {" "}
-                {(selectedCompany.founder_seats + 1) -
-                  Math.max(
-                    selectedCompany.investor_seats - 1,
-                    0
-                  )}
-              </p>
+          Companies: {metrics.companies}
 
-              <p className="mt-2 text-slate-400">
-                Positive values indicate
-                increased founder influence.
-              </p>
-            </CardContent>
-          </Card>
+          <br />
 
-          <GovernanceTimeline />
+          Founder Controlled:{" "}
+          {metrics.founder_controlled}
 
-          <Card className="bg-slate-950 border-slate-800 text-white">
-            <CardHeader>
-              <CardTitle>
-                Governance Intelligence
-              </CardTitle>
-            </CardHeader>
+          <br />
 
-            <CardContent>
-              {selectedCompany.control_score >= 70 && (
-                <p>
-                  Investor influence is dominant.
-                  Governance approvals may require
-                  significant investor participation.
-                </p>
-              )}
+          Investor Controlled:{" "}
+          {metrics.investor_controlled}
 
-              {selectedCompany.control_score >= 40 &&
-                selectedCompany.control_score < 70 && (
-                  <p>
-                    Governance influence is balanced.
-                    Founders and investors share
-                    decision-making power.
-                  </p>
-                )}
+          <br />
+          <br />
 
-              {selectedCompany.control_score < 40 && (
-                <p>
-                  Founder influence remains strong.
-                  Strategic governance leverage
-                  largely stays with the founding team.
-                </p>
-              )}
-            </CardContent>
-          </Card>
+          Includes board compositions,
+          protective rights, governance
+          stages, and control scenarios.
+        </CardContent>
+      </Card>
 
-          <Card className="bg-slate-950 border-slate-800 text-white">
-            <CardHeader>
-              <CardTitle>
-                Governance Alerts
-              </CardTitle>
-            </CardHeader>
+      <Card className="bg-slate-950 border-slate-800 text-white">
+        <CardHeader>
+          <CardTitle>
+            Source Context
+          </CardTitle>
+        </CardHeader>
 
-            <CardContent>
-              <GovernanceAlerts
-                company={selectedCompany}
-              />
-            </CardContent>
-          </Card>
+        <CardContent>
+          Governance concepts are inspired by
+          board-control disclosures and governance
+          structures commonly referenced in SEC EDGAR filings.
 
-          <Card className="bg-slate-950 border-slate-800 text-white">
-            <CardHeader>
-              <CardTitle>
-                Dataset Summary
-              </CardTitle>
-            </CardHeader>
+          <br />
+          <br />
 
-            <CardContent>
-              Synthetic governance dataset.
+          The dashboard attempts data retrieval through
+          an adapter layer and falls back to synthetic
+          governance datasets when public event-level
+          governance data is unavailable.
+        </CardContent>
+      </Card>
 
-              <br />
-              <br />
-
-              Companies: 8
-
-              <br />
-
-              Founder Controlled: 3
-
-              <br />
-
-              Investor Controlled: 5
-
-              <br />
-              <br />
-
-              Includes board compositions,
-              protective rights, and governance
-              control scenarios.
-            </CardContent>
-          </Card>
-
-          <Card className="bg-slate-950 border-slate-800 text-white">
-            <CardHeader>
-              <CardTitle>
-                Source Context
-              </CardTitle>
-            </CardHeader>
-
-            <CardContent>
-              Governance concepts are inspired by
-              board-control disclosures and governance
-              structures commonly referenced in SEC EDGAR filings.
-
-              <br />
-              <br />
-
-              Synthetic governance datasets are used for
-              demonstration purposes.
-            </CardContent>
-          </Card>
-
-          <DownloadData
-            data={selectedCompany}
-          />
-        </>
-      )}
+      <DownloadData
+        data={selectedCompany}
+      />
     </div>
   );
 }

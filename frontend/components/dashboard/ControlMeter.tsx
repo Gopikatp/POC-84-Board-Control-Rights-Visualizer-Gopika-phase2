@@ -1,6 +1,8 @@
 interface Company {
   company: string;
-  control_score: number;
+  founder_seats: number;
+  investor_seats: number;
+  independent_seats: number;
 }
 
 interface Props {
@@ -12,11 +14,18 @@ export default function ControlMeter({
 }: Props) {
   if (!company) return null;
 
-  const investorControl =
-    company.control_score;
+  const totalSeats =
+  company.founder_seats +
+  company.investor_seats +
+  company.independent_seats;
 
-  const founderControl =
-    100 - investorControl;
+const founderControl = Math.round(
+  (company.founder_seats / totalSeats) * 100
+);
+
+const investorControl = Math.round(
+  (company.investor_seats / totalSeats) * 100
+);
 
   return (
     <div className="bg-[#0B1117] border border-slate-800 rounded-lg p-6">

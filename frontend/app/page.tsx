@@ -21,8 +21,8 @@ interface Company {
   founder_seats: number;
   investor_seats: number;
   independent_seats: number;
+  stage: string;
   protective_rights: string[];
-  control_score: number;
 }
 
 interface Metrics {
@@ -48,19 +48,26 @@ export default function Home() {
 
   async function loadDashboardData() {
     try {
-      const metricsResponse = await api.get("/metrics");
+      const metricsResponse =
+        await api.get("/metrics");
 
       setMetrics(metricsResponse.data);
 
-      const companyResponse = await api.get("/companies");
+      const companyResponse =
+        await api.get("/companies");
 
       setCompanies(companyResponse.data);
 
       if (companyResponse.data.length > 0) {
-        setSelectedCompany(companyResponse.data[0]);
+        setSelectedCompany(
+          companyResponse.data[0]
+        );
       }
     } catch (error) {
-      console.error("Dashboard load failed:", error);
+      console.error(
+        "Dashboard load failed:",
+        error
+      );
     }
   }
 
@@ -69,6 +76,7 @@ export default function Home() {
       sidebar={
         <Sidebar
           selectedCompany={selectedCompany}
+          metrics={metrics}
         />
       }
     >
@@ -83,8 +91,12 @@ export default function Home() {
 
         <MetricsCards
           companies={metrics.companies}
-          founderControlled={metrics.founder_controlled}
-          investorControlled={metrics.investor_controlled}
+          founderControlled={
+            metrics.founder_controlled
+          }
+          investorControlled={
+            metrics.investor_controlled
+          }
         />
 
         {companies.length > 0 && (

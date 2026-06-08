@@ -12,9 +12,22 @@ export default function ScenarioCompare({
 }: Props) {
   if (!company) return null;
 
-  const controlShift =
-    (company.founder_seats + 1) -
-    Math.max(company.investor_seats - 1, 0);
+  const founderProposal =
+    company.founder_seats <
+    company.investor_seats;
+
+  const proposedFounderSeats =
+    founderProposal
+      ? company.founder_seats + 1
+      : company.founder_seats;
+
+  const proposedInvestorSeats =
+    founderProposal
+      ? Math.max(
+          company.investor_seats - 1,
+          0
+        )
+      : company.investor_seats + 1;
 
   return (
     <div className="bg-[#0B1117] border border-slate-800 rounded-lg p-6">
@@ -43,18 +56,14 @@ export default function ScenarioCompare({
           </h3>
 
           <p>
-            Founder Seats: {company.founder_seats + 1}
+            Founder Seats: {proposedFounderSeats}
           </p>
 
           <p>
-            Investor Seats: {Math.max(
-              company.investor_seats - 1,
-              0
-            )}
+            Investor Seats: {proposedInvestorSeats}
           </p>
         </div>
       </div>
-
     </div>
   );
 }

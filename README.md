@@ -4,29 +4,29 @@
 
 ## Overview
 
-Board Control Rights Visualizer is a governance intelligence dashboard designed to analyze how board composition, investor rights, and governance structures influence decision-making within venture-backed companies.
+Board Control Rights Visualizer is a governance intelligence dashboard designed to analyze how board composition, investor influence, voting power, and governance rights affect decision-making within venture-backed companies.
 
-Built as part of the Real Rails Intelligence Library, the platform focuses on the **Capital Formation rail**, helping users understand how control shifts between founders and investors as companies grow through successive funding rounds.
+Built as part of the Real Rails Intelligence Library under the **Capital Formation Rail**, the platform helps users understand how governance control shifts between founders, investors, and independent directors as organizations progress through different funding stages.
 
-Using governance datasets inspired by board-control structures commonly referenced in SEC EDGAR disclosures, the dashboard transforms complex governance concepts into intuitive visual analytics that can be understood by founders, investors, operators, and allocators.
+The dashboard converts governance structures into interactive analytics, simulations, and visualizations that support governance analysis and strategic decision-making.
 
 ---
 
 ## Problem Statement
 
-In venture-backed companies, ownership percentage alone does not determine control.
+Ownership percentage alone does not determine control in venture-backed companies.
 
-Board seats, voting rights, protective provisions, and governance agreements often have a greater influence on strategic decisions such as:
+Board seats, voting rights, governance agreements, and protective provisions often have greater influence over strategic decisions such as:
 
 * Raising new financing
-* Acquisitions and mergers
-* Executive leadership changes
-* Board expansion
 * Budget approvals
+* Acquisitions and mergers
+* Board expansion
+* Executive leadership changes
 
-Understanding who truly controls a company can be difficult because governance information is fragmented across legal agreements and disclosure documents.
+Understanding who truly controls a company can be challenging because governance information is often fragmented across legal documents and disclosure filings.
 
-This dashboard provides a centralized view of governance structures and decision-making power.
+Board Control Rights Visualizer provides a centralized governance intelligence layer that makes these structures easier to understand and analyze.
 
 ---
 
@@ -34,12 +34,14 @@ This dashboard provides a centralized view of governance structures and decision
 
 The platform is designed to:
 
-* Visualize board composition and control dynamics
+* Visualize board composition and governance control
+* Analyze voting power distribution
+* Identify governance concentration and majority control
 * Compare founder and investor influence
-* Analyze governance concentration and balance
-* Simulate decision approval scenarios
+* Simulate governance approval scenarios
+* Track governance evolution through funding stages
 * Highlight governance risks and alerts
-* Explain why governance structures matter during capital formation
+* Support governance intelligence and education
 
 ---
 
@@ -47,35 +49,52 @@ The platform is designed to:
 
 ### Board Seat Map
 
-Visual representation of governance composition across:
+Interactive visualization of:
 
 * Founder Seats
 * Investor Seats
 * Independent Director Seats
 
+---
+
 ### Voting Power Breakdown
 
-Calculates and displays voting influence percentages for each governance group.
+Calculates voting influence percentages for:
+
+* Founders
+* Investors
+* Independent Directors
+
+---
 
 ### Board Majority Analysis
 
 Determines:
 
-* Total board seats
-* Majority threshold
-* Current controlling group
+* Total Board Seats
+* Majority Threshold
+* Current Governance Control Classification
+
+---
 
 ### Founder vs Investor Control Meter
 
-Compares governance influence between founders and investors through an intuitive control score.
+Calculates governance influence directly from board composition and visualizes:
+
+* Founder Control Percentage
+* Investor Control Percentage
+
+---
 
 ### Governance Health Score
 
-Evaluates governance balance based on:
+Evaluates governance quality using:
 
-* Board composition
+* Board balance
 * Independent representation
 * Governance concentration
+
+---
 
 ### Decision Approval Simulator
 
@@ -86,61 +105,109 @@ Simulates governance outcomes for:
 * Acquisition Approval
 * Board Expansion
 
+Each decision type uses different approval thresholds to model governance complexity.
+
+---
+
 ### Scenario Compare
 
-Compares current governance structures with proposed board configurations to evaluate control changes.
+Compares:
+
+* Current Governance Structure
+* Proposed Governance Structure
+
+Displays governance impact and potential control shifts.
+
+---
 
 ### Governance Timeline
 
-Illustrates how governance structures evolve across:
+Tracks governance progression through:
 
-* Seed Round
+* Seed
 * Series A
 * Series B
 * IPO
 
+The timeline dynamically updates based on the selected company.
+
+---
+
 ### Protective Rights Checklist
 
-Tracks governance rights including:
+Displays governance protections including:
 
-* Budget Approval
-* Financing Approval
-* Board Approval
-* Acquisition Approval
+* Budget Approval Rights
+* Financing Approval Rights
+* Board Approval Rights
+* Acquisition Approval Rights
+
+---
 
 ### Governance Intelligence Sidebar
 
-Provides contextual insights through:
+Provides governance context through:
 
 * Why This Matters
 * Who Controls The Rail
 * Governance Intelligence
 * Governance Alerts
+* Governance Impact
+* Governance Timeline
 * Dataset Summary
 * Source Context
 
-### Download Sample Data
+---
 
-Allows users to export governance records for further analysis.
+### Governance Alerts
+
+Automatically identifies:
+
+* Investor Majority Situations
+* Protective Rights Requirements
+* Independent Director Presence
+
+Alerts update dynamically based on company governance structures.
+
+---
+
+### Data Export
+
+Supports:
+
+* JSON Export
+* CSV Export
+
+Allowing governance records to be downloaded for additional analysis.
 
 ---
 
 ## Data Sources
 
-### Reference Source
+### Governance Adapter Layer
+
+The backend implements a governance data adapter that attempts to retrieve governance information and falls back to synthetic governance datasets when external governance feeds are unavailable.
+
+### Reference Context
+
+Governance concepts are inspired by:
 
 * SEC EDGAR governance disclosures
+* Venture financing governance structures
+* Board control frameworks commonly used in capital formation
 
 ### Demonstration Dataset
 
-This project uses clearly labeled synthetic governance datasets to simulate:
+This project uses synthetic governance datasets to simulate:
 
 * Board compositions
-* Control structures
-* Governance rights
+* Governance structures
+* Voting power distribution
+* Protective rights
 * Investor influence scenarios
+* Governance stage progression
 
-Synthetic data is used because public event-level governance feeds are not available.
+Synthetic data is clearly labeled and used for demonstration purposes only.
 
 ---
 
@@ -159,9 +226,18 @@ Synthetic data is used because public event-level governance feeds are not avail
 * FastAPI
 * Python
 
+### Data Layer
+
+* Governance Adapter Service
+* Synthetic Dataset Fallback Layer
+
 ### Architecture Flow
 
 Governance Dataset
+
+↓
+
+Governance Adapter Layer
 
 ↓
 
@@ -177,7 +253,7 @@ Governance Intelligence Visualizations
 
 ↓
 
-User Interaction & Analysis
+User Analysis & Decision Support
 
 ---
 
@@ -211,13 +287,30 @@ Returns:
 * Founder Controlled Companies
 * Investor Controlled Companies
 
+---
+
 ### Companies
 
 ```http
 GET /api/companies
 ```
 
-Returns governance records and board composition data.
+Returns:
+
+* Company Governance Records
+* Board Composition Data
+* Governance Stage Information
+* Protective Rights Information
+
+---
+
+### Rights
+
+```http
+GET /api/rights
+```
+
+Returns available governance rights used within the dashboard.
 
 ---
 
@@ -233,11 +326,13 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-Runs on:
+Backend runs at:
 
 ```text
 http://localhost:8000
 ```
+
+---
 
 ### Frontend
 
@@ -249,7 +344,7 @@ npm install
 npm run dev
 ```
 
-Runs on:
+Frontend runs at:
 
 ```text
 http://localhost:3000
@@ -264,7 +359,13 @@ The repository includes:
 * VAR_REPORT.md
 * UAT_CHECKLIST.md
 
-These documents validate dashboard quality, visualization standards, functionality, and user acceptance testing.
+These documents validate:
+
+* Dashboard functionality
+* Governance analytics
+* User acceptance testing
+* Visualization quality
+* Data processing architecture
 
 ---
 
@@ -273,3 +374,5 @@ These documents validate dashboard quality, visualization standards, functionali
 **Gopika T P**
 
 **POC 84 – Board Control Rights Visualizer**
+
+**Real Rails Intelligence Library – Capital Formation Rail**

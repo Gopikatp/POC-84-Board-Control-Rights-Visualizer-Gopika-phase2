@@ -14,17 +14,17 @@
 
 ---
 
-## Objective
+# Objective
 
-Board Control Rights Visualizer is an intelligence dashboard designed to explain how governance structures, board composition, investor rights, and voting power influence strategic decision-making within venture-backed companies.
+Board Control Rights Visualizer is a governance intelligence dashboard that helps users understand how board composition, voting power, investor participation, and protective rights influence decision-making within venture-backed companies.
 
-The platform transforms governance information into actionable intelligence through interactive visualizations, governance analytics, and decision-making simulations.
+The platform transforms governance data into actionable intelligence through interactive visualizations, governance analytics, approval simulations, and board-control insights.
 
 ---
 
-## Design Validation
+# Design Validation
 
-### Visual Standards
+## Visual Standards
 
 | Requirement                   | Status |
 | ----------------------------- | ------ |
@@ -39,44 +39,58 @@ The platform transforms governance information into actionable intelligence thro
 
 ---
 
-### Layout Validation
+## Layout Validation
 
-| Requirement                  | Status |
-| ---------------------------- | ------ |
-| 70/30 Layout Structure       | PASS   |
-| Main Visualization Stage     | PASS   |
-| Intelligence Sidebar         | PASS   |
-| Dashboard Section Separation | PASS   |
-| Consistent Component Spacing | PASS   |
-| Responsive Grid Layout       | PASS   |
+| Requirement                   | Status |
+| ----------------------------- | ------ |
+| 70/30 Dashboard Layout        | PASS   |
+| Main Visualization Area       | PASS   |
+| Intelligence Sidebar          | PASS   |
+| Consistent Section Separation | PASS   |
+| Responsive Design             | PASS   |
+| Consistent Component Spacing  | PASS   |
 
 ---
 
-## Data Validation
+# Data Validation
 
-### Dataset Verification
+## Dataset Verification
 
 | Requirement                            | Status |
 | -------------------------------------- | ------ |
 | Synthetic Governance Dataset Available | PASS   |
-| Company Governance Records Available   | PASS   |
-| Board Composition Data Available       | PASS   |
-| Protective Rights Data Available       | PASS   |
-| Control Metrics Available              | PASS   |
+| Board Composition Records Available    | PASS   |
+| Protective Rights Available            | PASS   |
+| Governance Stage Information Available | PASS   |
+| Governance Metrics Available           | PASS   |
 | Governance Scenarios Available         | PASS   |
-
-### API Validation
-
-| Endpoint           | Status |
-| ------------------ | ------ |
-| GET /api/metrics   | PASS   |
-| GET /api/companies | PASS   |
 
 ---
 
-## Visualization Validation
+## Data Adapter Validation
 
-### Board Seat Map
+| Requirement                          | Status |
+| ------------------------------------ | ------ |
+| Governance Data Adapter Implemented  | PASS   |
+| Fallback Data Loading Available      | PASS   |
+| Synthetic Dataset Fallback Working   | PASS   |
+| Data Source Identification Available | PASS   |
+
+---
+
+## API Validation
+
+| Endpoint           | Status |
+| ------------------ | ------ |
+| GET /api/companies | PASS   |
+| GET /api/metrics   | PASS   |
+| GET /api/rights    | PASS   |
+
+---
+
+# Visualization Validation
+
+## Board Seat Map
 
 | Validation Item                 | Status |
 | ------------------------------- | ------ |
@@ -88,82 +102,90 @@ The platform transforms governance information into actionable intelligence thro
 
 ---
 
-### Voting Power Breakdown
+## Voting Power Breakdown
 
-| Validation Item                         | Status |
-| --------------------------------------- | ------ |
-| Voting Percentages Calculated Correctly | PASS   |
-| Founder Voting Power Visible            | PASS   |
-| Investor Voting Power Visible           | PASS   |
-| Independent Voting Power Visible        | PASS   |
-| Dynamic Updates Working                 | PASS   |
+| Validation Item                     | Status |
+| ----------------------------------- | ------ |
+| Founder Voting Power Calculated     | PASS   |
+| Investor Voting Power Calculated    | PASS   |
+| Independent Voting Power Calculated | PASS   |
+| Percentages Display Correctly       | PASS   |
+| Dynamic Updates Working             | PASS   |
 
 ---
 
-### Board Majority Analysis
+## Board Majority Analysis
 
 | Validation Item                         | Status |
 | --------------------------------------- | ------ |
 | Total Seats Calculated Correctly        | PASS   |
 | Majority Threshold Calculated Correctly | PASS   |
-| Majority Classification Accurate        | PASS   |
+| Governance Classification Accurate      | PASS   |
 | Dynamic Updates Working                 | PASS   |
 
 ---
 
-### Founder vs Investor Control Meter
+## Founder vs Investor Control Meter
 
-| Validation Item                 | Status |
-| ------------------------------- | ------ |
-| Control Scores Render Correctly | PASS   |
-| Founder Influence Displayed     | PASS   |
-| Investor Influence Displayed    | PASS   |
-| Dynamic Updates Working         | PASS   |
+| Validation Item                | Status |
+| ------------------------------ | ------ |
+| Control Percentages Calculated | PASS   |
+| Founder Influence Displayed    | PASS   |
+| Investor Influence Displayed   | PASS   |
+| Dynamic Updates Working        | PASS   |
 
 ---
 
-### Governance Health Score
+## Governance Health Score
 
 | Validation Item             | Status |
 | --------------------------- | ------ |
-| Health Score Calculated     | PASS   |
+| Governance Score Calculated | PASS   |
 | Governance Status Displayed | PASS   |
 | Dynamic Updates Working     | PASS   |
 
 ---
 
-### Decision Approval Simulator
+## Decision Approval Simulator
 
-| Validation Item                    | Status |
-| ---------------------------------- | ------ |
-| Decision Types Available           | PASS   |
-| Approval Logic Working             | PASS   |
-| Vote Threshold Calculation Correct | PASS   |
-| Result Display Working             | PASS   |
+| Validation Item                     | Status |
+| ----------------------------------- | ------ |
+| Multiple Decision Types Available   | PASS   |
+| Budget Approval Logic Working       | PASS   |
+| Financing Approval Logic Working    | PASS   |
+| Acquisition Approval Logic Working  | PASS   |
+| Board Expansion Logic Working       | PASS   |
+| Vote Threshold Calculation Accurate | PASS   |
+| Approval Result Displayed           | PASS   |
 
 ---
 
-### Scenario Compare
+## Scenario Compare
 
 | Validation Item               | Status |
 | ----------------------------- | ------ |
 | Current Governance Displayed  | PASS   |
 | Proposed Governance Displayed | PASS   |
-| Comparative Analysis Visible  | PASS   |
+| Dynamic Governance Comparison | PASS   |
+| Governance Impact Displayed   | PASS   |
 
 ---
 
-### Governance Timeline
+## Governance Timeline
 
-| Validation Item                      | Status |
-| ------------------------------------ | ------ |
-| Timeline Visible                     | PASS   |
-| Governance Stages Displayed          | PASS   |
-| Capital Formation Context Maintained | PASS   |
+| Validation Item           | Status |
+| ------------------------- | ------ |
+| Timeline Visible          | PASS   |
+| Company Stage Highlighted | PASS   |
+| Seed Stage Supported      | PASS   |
+| Series A Supported        | PASS   |
+| Series B Supported        | PASS   |
+| IPO Supported             | PASS   |
+| Dynamic Updates Working   | PASS   |
 
 ---
 
-### Protective Rights Checklist
+## Protective Rights Checklist
 
 | Validation Item             | Status |
 | --------------------------- | ------ |
@@ -173,82 +195,86 @@ The platform transforms governance information into actionable intelligence thro
 
 ---
 
-## Intelligence Layer Validation
+# Intelligence Layer Validation
 
-### Why This Matters
+## Why This Matters
 
 | Validation Item              | Status |
 | ---------------------------- | ------ |
 | Governance Context Explained | PASS   |
-| User Education Supported     | PASS   |
+| Educational Context Provided | PASS   |
 
 ---
 
-### Who Controls The Rail
+## Who Controls The Rail
 
 | Validation Item                    | Status |
 | ---------------------------------- | ------ |
-| Rail Participants Explained        | PASS   |
-| Governance Stakeholders Identified | PASS   |
+| Governance Stakeholders Explained  | PASS   |
+| Capital Formation Context Included | PASS   |
 
 ---
 
-### Governance Intelligence
-
-| Validation Item             | Status |
-| --------------------------- | ------ |
-| Control Analysis Generated  | PASS   |
-| Governance Insights Visible | PASS   |
-| Dynamic Updates Working     | PASS   |
-
----
-
-### Governance Alerts
-
-| Validation Item             | Status |
-| --------------------------- | ------ |
-| Investor Majority Detection | PASS   |
-| Governance Alerts Visible   | PASS   |
-| Independent Director Alerts | PASS   |
-| Dynamic Updates Working     | PASS   |
-
----
-
-### Dataset Summary
+## Governance Intelligence
 
 | Validation Item               | Status |
 | ----------------------------- | ------ |
-| Company Counts Visible        | PASS   |
-| Governance Statistics Visible | PASS   |
-| Dataset Context Provided      | PASS   |
+| Governance Analysis Generated | PASS   |
+| Dynamic Insights Displayed    | PASS   |
+| Company-Based Updates Working | PASS   |
 
 ---
 
-### Source Context
+## Governance Alerts
 
-| Validation Item                       | Status |
-| ------------------------------------- | ------ |
-| SEC EDGAR Context Included            | PASS   |
-| Synthetic Dataset Disclosure Included | PASS   |
+| Validation Item                | Status |
+| ------------------------------ | ------ |
+| Investor Majority Detection    | PASS   |
+| Protective Rights Detection    | PASS   |
+| Independent Director Detection | PASS   |
+| Dynamic Alerts Working         | PASS   |
 
 ---
 
-## User Interaction Validation
+## Dataset Summary
+
+| Validation Item                   | Status |
+| --------------------------------- | ------ |
+| API Metrics Displayed             | PASS   |
+| Company Count Visible             | PASS   |
+| Founder-Controlled Count Visible  | PASS   |
+| Investor-Controlled Count Visible | PASS   |
+
+---
+
+## Source Context
+
+| Validation Item                         | Status |
+| --------------------------------------- | ------ |
+| Governance Data Context Provided        | PASS   |
+| Adapter/Fallback Architecture Explained | PASS   |
+| Synthetic Dataset Disclosure Included   | PASS   |
+
+---
+
+# User Interaction Validation
 
 | Feature                        | Status |
 | ------------------------------ | ------ |
 | Company Filter                 | PASS   |
 | Dashboard Updates on Selection | PASS   |
 | Sidebar Updates on Selection   | PASS   |
-| Tooltips Visible               | PASS   |
-| Download Sample Data           | PASS   |
+| Dynamic Governance Analytics   | PASS   |
 | Interactive Charts             | PASS   |
+| JSON Export                    | PASS   |
+| CSV Export                     | PASS   |
+| Governance Simulations         | PASS   |
 
 ---
 
-## Architecture Validation
+# Architecture Validation
 
-### Frontend
+## Frontend
 
 | Component    | Status |
 | ------------ | ------ |
@@ -258,32 +284,42 @@ The platform transforms governance information into actionable intelligence thro
 | shadcn/ui    | PASS   |
 | Recharts     | PASS   |
 
-### Backend
+---
+
+## Backend
 
 | Component                  | Status |
 | -------------------------- | ------ |
 | FastAPI                    | PASS   |
 | REST API Endpoints         | PASS   |
-| Governance Dataset Service | PASS   |
+| Governance Data Adapter    | PASS   |
+| Synthetic Fallback Layer   | PASS   |
+| Governance Metrics Service | PASS   |
 
 ---
 
-## Final Assessment
+# Final Assessment
 
-The Board Control Rights Visualizer successfully satisfies the Real Rails Intelligence Dashboard requirements for POC 84.
+The Board Control Rights Visualizer satisfies the primary Real Rails Intelligence Dashboard requirements for POC 84.
 
-The dashboard delivers governance intelligence through:
+The platform delivers governance intelligence through:
 
-* Board Composition Analysis
+* Board Seat Composition Analysis
 * Voting Power Analytics
-* Governance Health Assessment
-* Decision Simulation
-* Control Structure Analysis
+* Board Majority Assessment
+* Founder vs Investor Control Analysis
+* Governance Health Scoring
+* Decision Approval Simulation
+* Governance Scenario Comparison
+* Governance Timeline Visualization
+* Protective Rights Analysis
 * Governance Alerts
 * Governance Intelligence Panels
-* Capital Formation Context
+* JSON & CSV Governance Data Export
 
-All visualization, intelligence, interaction, and governance analytics requirements have been successfully validated.
+The dashboard uses a synthetic governance dataset supported by an adapter-based fallback architecture and demonstrates how governance structures, board composition, investor participation, and protective rights influence strategic control outcomes within venture-backed organizations.
+
+---
 
 ## Final Result
 

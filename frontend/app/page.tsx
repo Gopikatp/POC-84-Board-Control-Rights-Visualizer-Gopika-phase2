@@ -42,9 +42,7 @@ export default function Home() {
   const [selectedCompany, setSelectedCompany] =
     useState<Company | null>(null);
 
-  useEffect(() => {
-    loadDashboardData();
-  }, []);
+
 
   async function loadDashboardData() {
     try {
@@ -70,6 +68,10 @@ export default function Home() {
       );
     }
   }
+
+    useEffect(() => {
+    loadDashboardData();
+  }, []);
 
   return (
     <DashboardLayout

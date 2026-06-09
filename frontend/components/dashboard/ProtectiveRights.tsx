@@ -25,6 +25,8 @@ export default function ProtectiveRights({
               className="flex items-center gap-3"
             >
               <input
+                aria-label="Protective right"
+                title="Protective right"
                 type="checkbox"
                 checked
                 readOnly

@@ -18,6 +18,8 @@ export default function CompanySelector({
       </label>
 
       <select
+        aria-label="Select company"
+        title="Select company"
         value={selected}
         onChange={(e) => onSelect(e.target.value)}
         className="w-full bg-[#0B1117] border border-slate-700 rounded-lg p-3"

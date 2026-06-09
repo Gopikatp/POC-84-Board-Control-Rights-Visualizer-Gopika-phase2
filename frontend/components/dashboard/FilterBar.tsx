@@ -16,6 +16,8 @@ export default function FilterBar({
       </label>
 
       <select
+         aria-label="Simulation scenario"
+         title="Simulation scenario"
         value={selected}
         onChange={(e) => onSelect(e.target.value)}
         className="w-full bg-[#0B1117] border border-slate-700 rounded-lg p-3"

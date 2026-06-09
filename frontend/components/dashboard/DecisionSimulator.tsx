@@ -104,6 +104,8 @@ export default function DecisionSimulator({
       </h2>
 
       <select
+        aria-label="Simulation scenario"
+        title="Simulation scenario"
         value={decision}
         onChange={(e) =>
           setDecision(e.target.value)

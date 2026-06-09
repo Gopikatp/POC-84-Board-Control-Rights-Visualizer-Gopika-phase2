@@ -85,6 +85,13 @@ export default function Home() {
           Board Control Rights Visualizer
         </h1>
 
+        <span className="px-2 py-1 rounded-full text-xs font-medium
+                   bg-amber-500/20 text-amber-300
+                   border border-amber-500/30">
+          MOCK DATA
+        </span>
+      
+
         <p className="text-slate-400 mb-8">
           Real Rails Intelligence Dashboard
         </p>

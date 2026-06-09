@@ -1,5 +1,14 @@
+interface Company {
+  company: string;
+  founder_seats: number;
+  investor_seats: number;
+  independent_seats: number;
+  stage: string;
+  protective_rights: string[];
+}
+
 interface Props {
-  data: any;
+  data: Company;
 }
 
 export default function DownloadData({

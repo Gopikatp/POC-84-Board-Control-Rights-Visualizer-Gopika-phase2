@@ -29,8 +29,17 @@ export default function ScenarioCompare({
         )
       : company.investor_seats + 1;
 
+  const proposedOutcome =
+    proposedFounderSeats >
+    proposedInvestorSeats
+      ? "Founder Controlled"
+      : proposedInvestorSeats >
+        proposedFounderSeats
+      ? "Investor Controlled"
+      : "Balanced Governance";
+
   return (
-    <div className="bg-[#0B1117] border border-slate-800 rounded-lg p-6">
+    <div className="glass-card p-6 text-white">
       <h2 className="text-xl font-semibold mb-6">
         Scenario Compare
       </h2>
@@ -63,6 +72,16 @@ export default function ScenarioCompare({
             Investor Seats: {proposedInvestorSeats}
           </p>
         </div>
+      </div>
+
+      <div className="mt-4 border border-cyan-500/30 bg-cyan-950/20 rounded-lg p-4">
+        <p className="font-medium">
+          Proposed Control Outcome
+        </p>
+
+        <p className="text-cyan-400 mt-1">
+          {proposedOutcome}
+        </p>
       </div>
     </div>
   );

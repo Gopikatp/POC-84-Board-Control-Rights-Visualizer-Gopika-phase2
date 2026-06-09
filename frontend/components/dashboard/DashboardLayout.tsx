@@ -14,7 +14,7 @@ export default function DashboardLayout({
           {children}
         </main>
 
-        <aside className="w-[30%] p-6 overflow-auto bg-[#0B1117]">
+        <aside className="w-[30%] p-6 overflow-auto bg-[#0B1117]/90 backdrop-blur-md border-l border-slate-800">
           {sidebar}
         </aside>
       </div>

@@ -65,7 +65,7 @@ export default function Sidebar({
 
   return (
     <div className="space-y-4">
-      <Card className="bg-slate-950 border-slate-800 text-white">
+      <Card className="glass-card text-white">
         <CardHeader>
           <CardTitle>
             Why This Matters
@@ -80,7 +80,7 @@ export default function Sidebar({
         </CardContent>
       </Card>
 
-      <Card className="bg-slate-950 border-slate-800 text-white">
+      <Card className="glass-card text-white">
         <CardHeader>
           <CardTitle>
             Who Controls The Rail
@@ -95,7 +95,7 @@ export default function Sidebar({
         </CardContent>
       </Card>
 
-      <Card className="bg-slate-950 border-slate-800 text-white">
+      <Card className="glass-card text-white">
         <CardHeader>
           <CardTitle>
             Selected Company
@@ -157,7 +157,7 @@ export default function Sidebar({
 
      
 
-      <Card className="bg-slate-950 border-slate-800 text-white">
+      <Card className="glass-card text-white">
         <CardHeader>
           <CardTitle>
             Governance Impact
@@ -165,23 +165,31 @@ export default function Sidebar({
         </CardHeader>
 
         <CardContent>
-          <p>
-            Net Control Shift:{" "}
-            {controlShift}
-          </p>
+  <p>
+    Proposed Founder Seats:
+    {" "}
+    {proposedFounderSeats}
+  </p>
 
-          <p className="mt-2 text-slate-400">
-            Positive values indicate
-            increased founder influence.
-          </p>
-        </CardContent>
+  <p>
+    Proposed Investor Seats:
+    {" "}
+    {proposedInvestorSeats}
+  </p>
+
+  <p className="mt-3 text-slate-400">
+    Simulates how adding or removing
+    board seats may alter governance
+    control and voting influence.
+  </p>
+</CardContent>
       </Card>
 
       <GovernanceTimeline
         company={selectedCompany}
       />
 
-      <Card className="bg-slate-950 border-slate-800 text-white">
+      <Card className="glass-card text-white">
         <CardHeader>
           <CardTitle>
             Governance Intelligence
@@ -189,36 +197,61 @@ export default function Sidebar({
         </CardHeader>
 
         <CardContent>
-          {selectedCompany.investor_seats >
-            selectedCompany.founder_seats && (
-            <p>
-              Investor influence is dominant.
-              Strategic approvals may require
-              significant investor participation.
-            </p>
-          )}
+  {selectedCompany.investor_seats >
+    selectedCompany.founder_seats && (
+    <>
+      <p>
+        Investor influence is dominant.
+        Strategic approvals may require
+        significant investor participation.
+      </p>
 
-          {selectedCompany.founder_seats >
-            selectedCompany.investor_seats && (
-            <p>
-              Founder influence remains strong.
-              Governance leverage largely stays
-              with the founding team.
-            </p>
-          )}
+      <p className="mt-3 text-slate-400 text-sm">
+        Investors hold a board advantage of{" "}
+        {selectedCompany.investor_seats -
+          selectedCompany.founder_seats}{" "}
+        seat(s).
+      </p>
+    </>
+  )}
 
-          {selectedCompany.founder_seats ===
-            selectedCompany.investor_seats && (
-            <p>
-              Governance influence is balanced.
-              Founders and investors share
-              decision-making authority.
-            </p>
-          )}
-        </CardContent>
+  {selectedCompany.founder_seats >
+    selectedCompany.investor_seats && (
+    <>
+      <p>
+        Founder influence remains strong.
+        Governance leverage largely stays
+        with the founding team.
+      </p>
+
+      <p className="mt-3 text-slate-400 text-sm">
+        Founders control{" "}
+        {selectedCompany.founder_seats -
+          selectedCompany.investor_seats}{" "}
+        additional board seat(s).
+      </p>
+    </>
+  )}
+
+  {selectedCompany.founder_seats ===
+    selectedCompany.investor_seats && (
+    <>
+      <p>
+        Governance influence is balanced.
+        Founders and investors share
+        decision-making authority.
+      </p>
+
+      <p className="mt-3 text-slate-400 text-sm">
+        Independent directors may act as
+        deciding votes in key approvals.
+      </p>
+    </>
+  )}
+</CardContent>
       </Card>
 
-      <Card className="bg-slate-950 border-slate-800 text-white">
+      <Card className="glass-card text-white">
         <CardHeader>
           <CardTitle>
             Governance Alerts
@@ -232,7 +265,32 @@ export default function Sidebar({
         </CardContent>
       </Card>
 
-      <Card className="bg-slate-950 border-slate-800 text-white">
+     <Card className="glass-card text-white">
+  <CardHeader>
+    <CardTitle>
+      Data Source Status
+    </CardTitle>
+  </CardHeader>
+
+  <CardContent>
+    <span className="inline-block px-3 py-1 rounded-full bg-yellow-600 text-xs">
+      Synthetic Fallback Active
+    </span>
+
+    <p className="mt-3 text-slate-400 text-sm">
+      Governance data is currently served
+      from the synthetic governance dataset
+      through the adapter layer.
+    </p>
+
+    <p className="mt-2 text-slate-500 text-xs">
+      Live SEC EDGAR integration is not
+      currently available.
+    </p>
+  </CardContent>
+</Card>
+
+      <Card className="glass-card text-white">
         <CardHeader>
           <CardTitle>
             Dataset Summary
@@ -240,7 +298,7 @@ export default function Sidebar({
         </CardHeader>
 
         <CardContent>
-          Synthetic governance dataset.
+          Synthetic governance dataset used for visualization and governance scenario analysis.
 
           <br />
           <br />
@@ -266,7 +324,7 @@ export default function Sidebar({
         </CardContent>
       </Card>
 
-      <Card className="bg-slate-950 border-slate-800 text-white">
+      <Card className="glass-card text-white">
         <CardHeader>
           <CardTitle>
             Source Context
@@ -274,17 +332,19 @@ export default function Sidebar({
         </CardHeader>
 
         <CardContent>
-          Governance concepts are inspired by
-          board-control disclosures and governance
-          structures commonly referenced in SEC EDGAR filings.
+           Governance concepts are inspired by
+           board-control disclosures, proxy statements,
+           voting structures, and governance frameworks
+           commonly referenced in SEC EDGAR filings.
 
           <br />
           <br />
 
-          The dashboard attempts data retrieval through
-          an adapter layer and falls back to synthetic
-          governance datasets when public event-level
-          governance data is unavailable.
+          The visualization layer translates these
+          governance concepts into simplified board
+          composition, voting power, and control-rights
+          analytics for educational and demonstration
+          purposes.
         </CardContent>
       </Card>
 

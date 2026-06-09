@@ -46,7 +46,7 @@ export default function BoardSeatMap({
   ];
 
   return (
-    <div className="bg-[#0B1117] border border-slate-800 rounded-lg p-6">
+    <div className="glass-card p-6 text-white">
       <h2 className="text-xl font-semibold mb-4">
         Board Seat Map
       </h2>

@@ -20,7 +20,7 @@ export default function GovernanceTimeline({
   ];
 
   return (
-    <div className="bg-slate-950 border border-slate-800 rounded-lg p-6 text-white">
+    <div className="glass-card p-6 text-white">
       <h2 className="text-xl font-semibold mb-4">
         Governance Timeline
       </h2>

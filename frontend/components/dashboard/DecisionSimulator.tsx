@@ -6,6 +6,7 @@ interface Company {
   founder_seats: number;
   investor_seats: number;
   independent_seats: number;
+  protective_rights: string[];
 }
 
 interface Props {
@@ -27,6 +28,8 @@ export default function DecisionSimulator({
 
   let threshold = 0;
   let availableVotes = 0;
+  let supportingGroup = "";
+  let requiredRight = "";
 
   switch (decision) {
     case "Budget Approval":
@@ -35,6 +38,11 @@ export default function DecisionSimulator({
       availableVotes =
         company.founder_seats +
         company.independent_seats;
+
+      supportingGroup =
+        "Founders + Independent Directors";
+
+      requiredRight = "budget_approval";
       break;
 
     case "New Financing":
@@ -43,28 +51,39 @@ export default function DecisionSimulator({
       availableVotes =
         company.investor_seats +
         company.independent_seats;
+
+      supportingGroup =
+        "Investors + Independent Directors";
+
+      requiredRight = "new_financing";
       break;
 
     case "Acquisition":
       threshold = Math.ceil(totalSeats * 0.75);
 
       availableVotes =
-        company.investor_seats +
-        company.founder_seats;
+        company.founder_seats +
+        company.investor_seats;
+
+      supportingGroup =
+        "Founders + Investors";
+
+      requiredRight = "acquisition_approval";
       break;
 
     case "Board Expansion":
       threshold = totalSeats;
 
-      availableVotes =
-        company.founder_seats +
-        company.investor_seats +
-        company.independent_seats;
+      availableVotes = totalSeats;
+
+      supportingGroup =
+        "Entire Board";
+
+      requiredRight = "board_approval";
       break;
 
     default:
       threshold = Math.ceil(totalSeats * 0.5);
-
       availableVotes =
         company.founder_seats +
         company.independent_seats;
@@ -73,8 +92,13 @@ export default function DecisionSimulator({
   const approved =
     availableVotes >= threshold;
 
+  const rightAvailable =
+    company.protective_rights.includes(
+      requiredRight
+    );
+
   return (
-    <div className="bg-[#0B1117] border border-slate-800 rounded-lg p-6">
+    <div className="glass-card p-6 text-white">
       <h2 className="text-xl font-semibold mb-4">
         Decision Approval Simulator
       </h2>
@@ -84,7 +108,7 @@ export default function DecisionSimulator({
         onChange={(e) =>
           setDecision(e.target.value)
         }
-        className="w-full bg-slate-900 border border-slate-700 rounded p-2 mb-4"
+        className="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 mb-4"
       >
         <option>Budget Approval</option>
         <option>New Financing</option>
@@ -92,21 +116,49 @@ export default function DecisionSimulator({
         <option>Board Expansion</option>
       </select>
 
-      <div className="space-y-2">
+      <div className="space-y-3">
         <p>
-          Total Board Seats: {totalSeats}
+          <strong>Total Board Seats:</strong>{" "}
+          {totalSeats}
         </p>
 
         <p>
-          Votes Needed: {threshold}
+          <strong>Votes Needed:</strong>{" "}
+          {threshold}
         </p>
 
         <p>
-          Available Votes: {availableVotes}
+          <strong>Supporting Group:</strong>{" "}
+          {supportingGroup}
+        </p>
+
+        <p>
+          <strong>Available Votes:</strong>{" "}
+          {availableVotes}
+        </p>
+
+        <p>
+          <strong>Required Right:</strong>{" "}
+          {requiredRight.replaceAll(
+            "_",
+            " "
+          )}
         </p>
       </div>
 
       <div className="mt-4">
+        {rightAvailable ? (
+          <div className="border border-green-500/40 bg-green-950/30 rounded-lg p-3 text-green-300">
+            ✓ Required governance right available
+          </div>
+        ) : (
+          <div className="border border-yellow-500/40 bg-yellow-950/30 rounded-lg p-3 text-yellow-300">
+            ⚠ Required governance right not present
+          </div>
+        )}
+      </div>
+
+      <div className="mt-4 p-3 rounded-lg bg-slate-900 border border-slate-700">
         <p
           className={`font-semibold ${
             approved
@@ -114,10 +166,9 @@ export default function DecisionSimulator({
               : "text-red-400"
           }`}
         >
-          Result:{" "}
           {approved
-            ? "✓ Approved"
-            : "✗ Rejected"}
+            ? "✓ Decision Approved"
+            : "✗ Decision Rejected"}
         </p>
       </div>
     </div>

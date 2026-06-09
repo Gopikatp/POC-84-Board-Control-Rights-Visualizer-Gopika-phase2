@@ -10,7 +10,7 @@ export default function FilterBar({
   onSelect,
 }: Props) {
   return (
-    <div className="bg-[#0B1117] border border-slate-800 rounded-lg p-4 mb-6">
+    <div className="glass-card p-6 text-white">
       <label className="block mb-2 text-sm text-slate-400">
         Filter Company
       </label>
@@ -18,7 +18,7 @@ export default function FilterBar({
       <select
         value={selected}
         onChange={(e) => onSelect(e.target.value)}
-        className="w-full bg-slate-950 border border-slate-700 rounded-lg p-3"
+        className="w-full bg-[#0B1117] border border-slate-700 rounded-lg p-3"
       >
         {companies.map((company) => (
           <option

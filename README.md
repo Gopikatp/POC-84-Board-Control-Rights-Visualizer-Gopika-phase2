@@ -4,17 +4,17 @@
 
 ## Overview
 
-Board Control Rights Visualizer is a governance intelligence dashboard designed to analyze how board composition, investor influence, voting power, and governance rights affect decision-making within venture-backed companies.
+Board Control Rights Visualizer is a governance intelligence dashboard designed to analyze how board composition, voting power, investor influence, protective rights, and governance structures affect decision-making within venture-backed companies.
 
 Built as part of the Real Rails Intelligence Library under the **Capital Formation Rail**, the platform helps users understand how governance control shifts between founders, investors, and independent directors as organizations progress through different funding stages.
 
-The dashboard converts governance structures into interactive analytics, simulations, and visualizations that support governance analysis and strategic decision-making.
+The dashboard transforms governance structures into interactive analytics, simulations, and visualizations that support governance analysis, board-control assessment, and strategic decision-making.
 
 ---
 
-## Problem Statement
+# Problem Statement
 
-Ownership percentage alone does not determine control in venture-backed companies.
+Ownership percentage alone does not determine control within venture-backed companies.
 
 Board seats, voting rights, governance agreements, and protective provisions often have greater influence over strategic decisions such as:
 
@@ -24,13 +24,13 @@ Board seats, voting rights, governance agreements, and protective provisions oft
 * Board expansion
 * Executive leadership changes
 
-Understanding who truly controls a company can be challenging because governance information is often fragmented across legal documents and disclosure filings.
+Understanding who truly controls a company can be difficult because governance information is often fragmented across legal agreements and disclosure documents.
 
-Board Control Rights Visualizer provides a centralized governance intelligence layer that makes these structures easier to understand and analyze.
+Board Control Rights Visualizer provides a centralized governance intelligence layer that makes governance structures easier to understand, compare, and analyze.
 
 ---
 
-## Objectives
+# Objectives
 
 The platform is designed to:
 
@@ -39,15 +39,16 @@ The platform is designed to:
 * Identify governance concentration and majority control
 * Compare founder and investor influence
 * Simulate governance approval scenarios
-* Track governance evolution through funding stages
+* Track governance evolution across funding stages
 * Highlight governance risks and alerts
-* Support governance intelligence and education
+* Provide governance intelligence and educational context
+* Support governance-focused decision analysis
 
 ---
 
-## Key Features
+# Key Features
 
-### Board Seat Map
+## Board Seat Map
 
 Interactive visualization of:
 
@@ -57,7 +58,7 @@ Interactive visualization of:
 
 ---
 
-### Voting Power Breakdown
+## Voting Power Breakdown
 
 Calculates voting influence percentages for:
 
@@ -67,17 +68,17 @@ Calculates voting influence percentages for:
 
 ---
 
-### Board Majority Analysis
+## Board Majority Analysis
 
 Determines:
 
 * Total Board Seats
 * Majority Threshold
-* Current Governance Control Classification
+* Governance Control Classification
 
 ---
 
-### Founder vs Investor Control Meter
+## Founder vs Investor Control Meter
 
 Calculates governance influence directly from board composition and visualizes:
 
@@ -86,7 +87,7 @@ Calculates governance influence directly from board composition and visualizes:
 
 ---
 
-### Governance Health Score
+## Governance Health Score
 
 Evaluates governance quality using:
 
@@ -96,7 +97,7 @@ Evaluates governance quality using:
 
 ---
 
-### Decision Approval Simulator
+## Decision Approval Simulator
 
 Simulates governance outcomes for:
 
@@ -105,22 +106,27 @@ Simulates governance outcomes for:
 * Acquisition Approval
 * Board Expansion
 
-Each decision type uses different approval thresholds to model governance complexity.
+Features:
+
+* Decision-specific voting thresholds
+* Governance-right validation
+* Supporting-group identification
+* Approval and rejection outcomes
 
 ---
 
-### Scenario Compare
+## Scenario Compare
 
 Compares:
 
 * Current Governance Structure
 * Proposed Governance Structure
 
-Displays governance impact and potential control shifts.
+Highlights governance shifts and potential changes in control.
 
 ---
 
-### Governance Timeline
+## Governance Timeline
 
 Tracks governance progression through:
 
@@ -129,11 +135,11 @@ Tracks governance progression through:
 * Series B
 * IPO
 
-The timeline dynamically updates based on the selected company.
+Timeline updates dynamically based on the selected company.
 
 ---
 
-### Protective Rights Checklist
+## Protective Rights Checklist
 
 Displays governance protections including:
 
@@ -144,25 +150,26 @@ Displays governance protections including:
 
 ---
 
-### Governance Intelligence Sidebar
+## Governance Intelligence Sidebar
 
 Provides governance context through:
 
 * Why This Matters
 * Who Controls The Rail
 * Governance Intelligence
-* Governance Alerts
 * Governance Impact
+* Governance Alerts
 * Governance Timeline
 * Dataset Summary
 * Source Context
 
 ---
 
-### Governance Alerts
+## Governance Alerts
 
 Automatically identifies:
 
+* Founder Majority Situations
 * Investor Majority Situations
 * Protective Rights Requirements
 * Independent Director Presence
@@ -171,32 +178,46 @@ Alerts update dynamically based on company governance structures.
 
 ---
 
-### Data Export
+## Data Source Status
+
+Provides transparency regarding the governance data source:
+
+* Governance Adapter Status
+* Synthetic Fallback Status
+* Data Processing Context
+
+---
+
+## Data Export
 
 Supports:
 
 * JSON Export
 * CSV Export
 
-Allowing governance records to be downloaded for additional analysis.
+Allowing governance records to be downloaded for further analysis.
 
 ---
 
-## Data Sources
+# Data Sources
 
-### Governance Adapter Layer
+## Governance Adapter Layer
 
-The backend implements a governance data adapter that attempts to retrieve governance information and falls back to synthetic governance datasets when external governance feeds are unavailable.
+The backend implements a governance adapter layer that attempts governance data retrieval and automatically falls back to synthetic governance datasets when external governance feeds are unavailable.
 
-### Reference Context
+---
+
+## Reference Context
 
 Governance concepts are inspired by:
 
 * SEC EDGAR governance disclosures
 * Venture financing governance structures
-* Board control frameworks commonly used in capital formation
+* Board-control frameworks used in capital formation
 
-### Demonstration Dataset
+---
+
+## Demonstration Dataset
 
 This project uses synthetic governance datasets to simulate:
 
@@ -205,15 +226,15 @@ This project uses synthetic governance datasets to simulate:
 * Voting power distribution
 * Protective rights
 * Investor influence scenarios
-* Governance stage progression
+* Governance-stage progression
 
-Synthetic data is clearly labeled and used for demonstration purposes only.
+Synthetic data is clearly labeled and used solely for demonstration and educational purposes.
 
 ---
 
-## Dashboard Architecture
+# Dashboard Architecture
 
-### Frontend
+## Frontend
 
 * Next.js
 * TypeScript
@@ -221,17 +242,24 @@ Synthetic data is clearly labeled and used for demonstration purposes only.
 * shadcn/ui
 * Recharts
 
-### Backend
+---
+
+## Backend
 
 * FastAPI
 * Python
 
-### Data Layer
+---
+
+## Data Layer
 
 * Governance Adapter Service
+* Governance Metrics Service
 * Synthetic Dataset Fallback Layer
 
-### Architecture Flow
+---
+
+## Architecture Flow
 
 Governance Dataset
 
@@ -257,7 +285,20 @@ User Analysis & Decision Support
 
 ---
 
-## Project Structure
+# UI & Design
+
+The dashboard follows Real Rails Intelligence design standards:
+
+* Obsidian Background (#030712)
+* Glassmorphism Cards
+* Responsive Layout
+* Governance Intelligence Sidebar
+* Consistent Dark Theme
+* Production Dashboard Structure
+
+---
+
+# Project Structure
 
 ```text
 POC-84-Board-Control-Rights-Visualizer-Gopika
@@ -273,9 +314,9 @@ POC-84-Board-Control-Rights-Visualizer-Gopika
 
 ---
 
-## API Endpoints
+# API Endpoints
 
-### Metrics
+## Metrics
 
 ```http
 GET /api/metrics
@@ -289,7 +330,7 @@ Returns:
 
 ---
 
-### Companies
+## Companies
 
 ```http
 GET /api/companies
@@ -304,19 +345,19 @@ Returns:
 
 ---
 
-### Rights
+## Rights
 
 ```http
 GET /api/rights
 ```
 
-Returns available governance rights used within the dashboard.
+Returns governance-right definitions used throughout the dashboard.
 
 ---
 
-## Local Setup
+# Local Setup
 
-### Backend
+## Backend
 
 ```bash
 cd backend
@@ -334,7 +375,7 @@ http://localhost:8000
 
 ---
 
-### Frontend
+## Frontend
 
 ```bash
 cd frontend
@@ -352,7 +393,7 @@ http://localhost:3000
 
 ---
 
-## Validation
+# Validation
 
 The repository includes:
 
@@ -365,11 +406,12 @@ These documents validate:
 * Governance analytics
 * User acceptance testing
 * Visualization quality
-* Data processing architecture
+* Governance simulations
+* Data-processing architecture
 
 ---
 
-## Author
+# Author
 
 **Gopika T P**
 

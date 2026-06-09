@@ -23,9 +23,7 @@ export default function GovernanceAlerts({
 
   return (
     <div className="space-y-3">
-      <h3 className="text-sm font-semibold text-slate-300 uppercase tracking-wide">
-        Governance Alerts
-      </h3>
+      
 
       {company.investor_seats >= majority && (
         <div className="border border-red-500/40 bg-red-950/30 rounded-lg p-3 transition-all hover:border-red-400">

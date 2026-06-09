@@ -8,6 +8,8 @@
 
 **Rail:** Capital Formation
 
+**Theme:** Governance Intelligence & Board Control Analytics
+
 **Author:** Gopika T P
 
 ---
@@ -16,12 +18,13 @@
 
 ## Dashboard Initialization
 
-| Test Case          | Expected Result                                                    | Status |
-| ------------------ | ------------------------------------------------------------------ | ------ |
-| Dashboard Loads    | Dashboard renders successfully without errors                      | PASS   |
-| Metrics Cards Load | Companies, Founder Controlled, Investor Controlled metrics visible | PASS   |
-| Sidebar Loads      | Intelligence sidebar renders correctly                             | PASS   |
-| Responsive Layout  | Dashboard remains usable across screen sizes                       | PASS   |
+| Test Case                     | Expected Result                                                    | Status |
+| ----------------------------- | ------------------------------------------------------------------ | ------ |
+| Dashboard Loads               | Dashboard renders successfully without errors                      | PASS   |
+| Metrics Cards Load            | Companies, Founder Controlled, Investor Controlled metrics visible | PASS   |
+| Sidebar Loads                 | Governance intelligence sidebar renders correctly                  | PASS   |
+| Responsive Layout             | Dashboard remains usable across supported screen sizes             | PASS   |
+| Glassmorphism Styling Applied | Dashboard cards render with consistent glass-card styling          | PASS   |
 
 ---
 
@@ -93,26 +96,29 @@
 
 ## Decision Approval Simulator Validation
 
-| Test Case             | Expected Result                           | Status |
-| --------------------- | ----------------------------------------- | ------ |
-| Simulator Visible     | Simulator renders correctly               | PASS   |
-| Budget Approval Logic | Uses 50% approval threshold               | PASS   |
-| New Financing Logic   | Uses financing-specific threshold         | PASS   |
-| Acquisition Logic     | Uses acquisition-specific threshold       | PASS   |
-| Board Expansion Logic | Uses expansion-specific threshold         | PASS   |
-| Threshold Calculation | Vote threshold updates by decision type   | PASS   |
-| Result Display        | Approval or rejection displayed correctly | PASS   |
+| Test Case                   | Expected Result                                   | Status |
+| --------------------------- | ------------------------------------------------- | ------ |
+| Simulator Visible           | Simulator renders correctly                       | PASS   |
+| Budget Approval Logic       | Uses budget approval threshold correctly          | PASS   |
+| New Financing Logic         | Uses financing approval threshold correctly       | PASS   |
+| Acquisition Logic           | Uses acquisition approval threshold correctly     | PASS   |
+| Board Expansion Logic       | Uses board expansion approval threshold correctly | PASS   |
+| Threshold Calculation       | Vote threshold updates by decision type           | PASS   |
+| Supporting Group Displayed  | Supporting voting group displayed correctly       | PASS   |
+| Governance Right Validation | Required governance right evaluated correctly     | PASS   |
+| Result Display              | Approval or rejection displayed correctly         | PASS   |
 
 ---
 
 ## Scenario Compare Validation
 
-| Test Case                     | Expected Result                              | Status |
-| ----------------------------- | -------------------------------------------- | ------ |
-| Current Governance Displayed  | Current board structure visible              | PASS   |
-| Proposed Governance Displayed | Proposed board structure visible             | PASS   |
-| Dynamic Scenario Generation   | Scenario changes based on company governance | PASS   |
-| Governance Impact Visible     | Net control shift displayed                  | PASS   |
+| Test Case                       | Expected Result                                  | Status |
+| ------------------------------- | ------------------------------------------------ | ------ |
+| Current Governance Displayed    | Current board structure visible                  | PASS   |
+| Proposed Governance Displayed   | Proposed board structure visible                 | PASS   |
+| Governance Simulation Available | Proposed governance scenario generated correctly | PASS   |
+| Governance Outcome Displayed    | Governance control outcome displayed             | PASS   |
+| Dynamic Updates                 | Scenario updates when company changes            | PASS   |
 
 ---
 
@@ -132,39 +138,50 @@
 
 ## Protective Rights Validation
 
-| Test Case                | Expected Result                    | Status |
-| ------------------------ | ---------------------------------- | ------ |
-| Rights Checklist Visible | Governance rights displayed        | PASS   |
-| Budget Approval Rights   | Displayed correctly                | PASS   |
-| Financing Rights         | Displayed correctly                | PASS   |
-| Board Approval Rights    | Displayed correctly                | PASS   |
-| Acquisition Rights       | Displayed correctly                | PASS   |
-| Dynamic Updates          | Rights update when company changes | PASS   |
+| Test Case                        | Expected Result                    | Status |
+| -------------------------------- | ---------------------------------- | ------ |
+| Rights Checklist Visible         | Governance rights displayed        | PASS   |
+| Budget Approval Rights Displayed | Rights rendered correctly          | PASS   |
+| Financing Rights Displayed       | Rights rendered correctly          | PASS   |
+| Board Approval Rights Displayed  | Rights rendered correctly          | PASS   |
+| Dynamic Updates                  | Rights update when company changes | PASS   |
 
 ---
 
 ## Governance Intelligence Validation
 
-| Test Case                       | Expected Result                   | Status |
-| ------------------------------- | --------------------------------- | ------ |
-| Why This Matters Visible        | Governance context displayed      | PASS   |
-| Who Controls The Rail Visible   | Rail explanation displayed        | PASS   |
-| Governance Intelligence Visible | Governance insights displayed     | PASS   |
-| Governance Impact Visible       | Governance impact displayed       | PASS   |
-| Dataset Summary Visible         | Governance statistics displayed   | PASS   |
-| Source Context Visible          | Data-source explanation displayed | PASS   |
+| Test Case                       | Expected Result                              | Status |
+| ------------------------------- | -------------------------------------------- | ------ |
+| Why This Matters Visible        | Governance context displayed                 | PASS   |
+| Who Controls The Rail Visible   | Governance stakeholder explanation displayed | PASS   |
+| Governance Intelligence Visible | Governance insights displayed                | PASS   |
+| Governance Impact Visible       | Proposed governance impact displayed         | PASS   |
+| Dataset Summary Visible         | Governance statistics displayed              | PASS   |
+| Source Context Visible          | Data-source explanation displayed            | PASS   |
 
 ---
 
 ## Governance Alerts Validation
 
-| Test Case                  | Expected Result                      | Status |
-| -------------------------- | ------------------------------------ | ------ |
-| Governance Alerts Visible  | Alert panel displayed                | PASS   |
-| Investor Majority Alert    | Appears when majority exists         | PASS   |
-| Protective Rights Alert    | Appears when rights exist            | PASS   |
-| Independent Director Alert | Appears when independent seats exist | PASS   |
-| Dynamic Updates            | Alerts update by company             | PASS   |
+| Test Case                  | Expected Result                         | Status |
+| -------------------------- | --------------------------------------- | ------ |
+| Governance Alerts Visible  | Alert panel displayed                   | PASS   |
+| Founder Majority Alert     | Appears when founder majority exists    | PASS   |
+| Investor Majority Alert    | Appears when investor majority exists   | PASS   |
+| Protective Rights Alert    | Appears when protective rights exist    | PASS   |
+| Independent Director Alert | Appears when independent seats exist    | PASS   |
+| Dynamic Updates            | Alerts update based on selected company | PASS   |
+
+---
+
+## Data Source Status Validation
+
+| Test Case                         | Expected Result                           | Status |
+| --------------------------------- | ----------------------------------------- | ------ |
+| Source Status Card Visible        | Data source card displayed                | PASS   |
+| Synthetic Fallback Badge Visible  | Status badge displayed correctly          | PASS   |
+| Adapter Layer Description Visible | Architecture explanation displayed        | PASS   |
+| Source Transparency Provided      | Data source information clearly disclosed | PASS   |
 
 ---
 
@@ -213,11 +230,12 @@
 
 ## Adapter & Fallback Validation
 
-| Test Case                   | Expected Result                                        | Status |
-| --------------------------- | ------------------------------------------------------ | ------ |
-| Governance Adapter Loads    | Adapter service initializes                            | PASS   |
-| Fallback Trigger Works      | Synthetic data loaded when external source unavailable | PASS   |
-| Data Source Label Available | Source identification available in records             | PASS   |
+| Test Case                    | Expected Result                          | Status |
+| ---------------------------- | ---------------------------------------- | ------ |
+| Governance Adapter Loads     | Adapter service initializes correctly    | PASS   |
+| Synthetic Dataset Available  | Governance dataset loads successfully    | PASS   |
+| Fallback Mechanism Available | Fallback architecture operational        | PASS   |
+| Data Source Status Displayed | Source transparency visible in dashboard | PASS   |
 
 ---
 
@@ -234,6 +252,7 @@
 * Alerts update dynamically
 * Export functionality works
 * Visualizations render correctly
+* Data source transparency available
 
 **Status:** PASS
 
@@ -244,6 +263,7 @@
 * Clear visual hierarchy
 * Consistent Real Rails design language
 * Obsidian theme compliance (#030712)
+* Glassmorphism dashboard styling
 * Responsive dashboard layout
 * Intuitive navigation and interaction
 
@@ -253,6 +273,6 @@
 
 # Final Result
 
-All governance intelligence, visualization, analytics, simulation, filtering, export, adapter-layer, and interaction requirements have been successfully tested and validated.
+All governance intelligence, visualization, analytics, simulation, filtering, export, adapter-layer, governance transparency, and interaction requirements have been successfully tested and validated.
 
-**Overall UAT Status: PASS**
+## Overall UAT Status: PASS

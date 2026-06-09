@@ -15,8 +15,43 @@ export default function DownloadData({
   data,
 }: Props) {
   function downloadJSON() {
+    const totalSeats =
+      data.founder_seats +
+      data.investor_seats +
+      data.independent_seats;
+
+    const majorityThreshold =
+      Math.floor(totalSeats / 2) + 1;
+
+    const governanceType =
+      data.investor_seats >
+      data.founder_seats
+        ? "Investor Dominated"
+        : data.founder_seats >
+          data.investor_seats
+        ? "Founder Dominated"
+        : "Balanced Governance";
+
+    const exportData = {
+      company: data.company,
+      stage: data.stage,
+      founder_seats: data.founder_seats,
+      investor_seats: data.investor_seats,
+      independent_seats:
+        data.independent_seats,
+      total_seats: totalSeats,
+      majority_threshold:
+        majorityThreshold,
+      governance_classification:
+        governanceType,
+      protective_rights:
+        data.protective_rights,
+      data_source:
+        "Synthetic Governance Dataset",
+    };
+
     const blob = new Blob(
-      [JSON.stringify(data, null, 2)],
+      [JSON.stringify(exportData, null, 2)],
       {
         type: "application/json",
       }
@@ -33,27 +68,36 @@ export default function DownloadData({
       `${data.company}-governance-report.json`;
 
     link.click();
+
+    window.URL.revokeObjectURL(url);
   }
 
   function downloadCSV() {
-    if (!data) return;
-
     const totalSeats =
       data.founder_seats +
       data.investor_seats +
       data.independent_seats;
 
-    const founderVotingPower = Math.round(
-      (data.founder_seats / totalSeats) * 100
-    );
+    const founderVotingPower =
+      Math.round(
+        (data.founder_seats /
+          totalSeats) *
+          100
+      );
 
-    const investorVotingPower = Math.round(
-      (data.investor_seats / totalSeats) * 100
-    );
+    const investorVotingPower =
+      Math.round(
+        (data.investor_seats /
+          totalSeats) *
+          100
+      );
 
-    const independentVotingPower = Math.round(
-      (data.independent_seats / totalSeats) * 100
-    );
+    const independentVotingPower =
+      Math.round(
+        (data.independent_seats /
+          totalSeats) *
+          100
+      );
 
     const majorityThreshold =
       Math.floor(totalSeats / 2) + 1;
@@ -101,6 +145,8 @@ Data Source,Synthetic Governance Dataset`;
       `${data.company}-governance-report.csv`;
 
     link.click();
+
+    window.URL.revokeObjectURL(url);
   }
 
   return (

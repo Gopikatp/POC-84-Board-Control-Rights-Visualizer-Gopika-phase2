@@ -192,6 +192,7 @@
 | Company Count Visible     | API company count displayed     | PASS   |
 | Founder Controlled Count  | API founder count displayed     | PASS   |
 | Investor Controlled Count | API investor count displayed    | PASS   |
+| Balanced Governance Count | API balanced count displayed    | PASS   |
 | Dynamic Metrics           | Summary populated from API data | PASS   |
 
 ---
@@ -219,12 +220,13 @@
 
 ## API Validation
 
-| Test Case          | Expected Result                       | Status |
-| ------------------ | ------------------------------------- | ------ |
-| GET /api/metrics   | Metrics returned successfully         | PASS   |
-| GET /api/companies | Company dataset returned successfully | PASS   |
-| GET /api/rights    | Rights dataset returned successfully  | PASS   |
-| Response Time      | Data loads without noticeable delay   | PASS   |
+| Test Case                           | Expected Result                                    | Status |
+| ----------------------------------- | -------------------------------------------------- | ------ |
+| GET /api/metrics                    | Metrics returned successfully                      | PASS   |
+| GET /api/companies                  | Company dataset returned successfully              | PASS   |
+| GET /api/rights                     | Rights dataset returned successfully               | PASS   |
+| Response Time                       | Data loads without noticeable delay                | PASS   |
+| Balanced Governance Metric Returned | Metrics endpoint returns balanced governance count | PASS   |
 
 ---
 

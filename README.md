@@ -227,6 +227,7 @@ This project uses synthetic governance datasets to simulate:
 * Protective rights
 * Investor influence scenarios
 * Governance-stage progression
+* Balanced Governance Companies
 
 Synthetic data is clearly labeled and used solely for demonstration and educational purposes.
 
@@ -329,6 +330,7 @@ Returns:
 * Total Companies
 * Founder Controlled Companies
 * Investor Controlled Companies
+* Balanced Governance Companies
 
 ---
 

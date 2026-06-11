@@ -93,6 +93,17 @@ The platform transforms governance structures into actionable intelligence throu
 | GET /api/metrics   | PASS   |
 | GET /api/rights    | PASS   |
 
+### Metrics Endpoint Verification
+
+The `/api/metrics` endpoint returns governance summary statistics used throughout the dashboard:
+
+- Total Companies
+- Founder Controlled Companies
+- Investor Controlled Companies
+- Balanced Governance Companies
+
+These metrics are displayed within the dashboard summary cards and Dataset Summary panel and remain synchronized with governance classifications shown throughout the application.
+
 ---
 
 # Visualization Validation
@@ -282,6 +293,7 @@ The platform transforms governance structures into actionable intelligence throu
 | Company Count Visible                | PASS   |
 | Founder-Controlled Count Visible     | PASS   |
 | Investor-Controlled Count Visible    | PASS   |
+| Balanced Governance Count Visible    | PASS   |
 | Governance Dataset Summary Available | PASS   |
 
 ---

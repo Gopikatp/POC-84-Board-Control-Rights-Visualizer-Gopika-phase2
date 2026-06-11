@@ -8,15 +8,17 @@ interface Props {
   companies: number;
   founderControlled: number;
   investorControlled: number;
+  balancedGovernance: number;
 }
 
 export default function MetricsCards({
   companies,
   founderControlled,
   investorControlled,
+  balancedGovernance,
 }: Props) {
   return (
-    <div className="grid grid-cols-3 gap-4 mb-6">
+    <div className="grid grid-cols-4 gap-4 mb-6">
       <div className="glass-card p-4">
         <Tooltip>
           <TooltipTrigger asChild>
@@ -62,12 +64,30 @@ export default function MetricsCards({
           </TooltipTrigger>
 
           <TooltipContent>
-            Companies where investors hold equal or greater influence.
+            Companies where investors hold more board influence.
           </TooltipContent>
         </Tooltip>
 
         <p className="text-3xl font-bold text-yellow-400">
           {investorControlled}
+        </p>
+      </div>
+
+      <div className="glass-card p-4">
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <h3 className="text-slate-400 cursor-help">
+              Balanced Governance
+            </h3>
+          </TooltipTrigger>
+
+          <TooltipContent>
+            Companies where founders and investors hold equal board influence.
+          </TooltipContent>
+        </Tooltip>
+
+        <p className="text-3xl font-bold text-blue-400">
+          {balancedGovernance}
         </p>
       </div>
     </div>

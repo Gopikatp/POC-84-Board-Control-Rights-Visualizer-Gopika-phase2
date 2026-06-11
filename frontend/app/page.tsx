@@ -29,6 +29,7 @@ interface Metrics {
   companies: number;
   founder_controlled: number;
   investor_controlled: number;
+  balanced_governance: number;
 }
 
 export default function Home() {
@@ -36,13 +37,16 @@ export default function Home() {
     companies: 0,
     founder_controlled: 0,
     investor_controlled: 0,
+    balanced_governance: 0,
   });
 
   const [companies, setCompanies] = useState<Company[]>([]);
   const [selectedCompany, setSelectedCompany] =
     useState<Company | null>(null);
 
-
+  useEffect(() => {
+    loadDashboardData();
+  }, []);
 
   async function loadDashboardData() {
     try {
@@ -69,10 +73,6 @@ export default function Home() {
     }
   }
 
-    useEffect(() => {
-    loadDashboardData();
-  }, []);
-
   return (
     <DashboardLayout
       sidebar={
@@ -87,14 +87,17 @@ export default function Home() {
           Board Control Rights Visualizer
         </h1>
 
-        <span className="px-2 py-1 rounded-full text-xs font-medium
-                   bg-amber-500/20 text-amber-300
-                   border border-amber-500/30">
+        <span
+          className="
+            px-2 py-1 rounded-full text-xs font-medium
+            bg-amber-500/20 text-amber-300
+            border border-amber-500/30
+          "
+        >
           MOCK DATA
         </span>
-      
 
-        <p className="text-slate-400 mb-8">
+        <p className="text-slate-400 mb-8 mt-3">
           Real Rails Intelligence Dashboard
         </p>
 
@@ -105,6 +108,9 @@ export default function Home() {
           }
           investorControlled={
             metrics.investor_controlled
+          }
+          balancedGovernance={
+            metrics.balanced_governance
           }
         />
 

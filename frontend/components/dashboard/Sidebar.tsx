@@ -27,6 +27,7 @@ interface Metrics {
   companies: number;
   founder_controlled: number;
   investor_controlled: number;
+  balanced_governance: number;
 }
 
 interface Props {
@@ -59,9 +60,7 @@ export default function Sidebar({
         )
       : selectedCompany.investor_seats + 1;
 
-  const controlShift =
-    proposedFounderSeats -
-    proposedInvestorSeats;
+  
 
   return (
     <div className="space-y-4">
@@ -314,6 +313,11 @@ export default function Sidebar({
 
           Investor Controlled:{" "}
           {metrics.investor_controlled}
+
+          <br />
+
+          Balanced Governance:{" "}
+          {metrics.balanced_governance}
 
           <br />
           <br />

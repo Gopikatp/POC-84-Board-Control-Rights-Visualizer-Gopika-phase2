@@ -22,3 +22,9 @@ Thumbs.db
 
 # Logs
 *.log
+
+# RepoMix
+repomix-output.xml
+repomix-output.md
+repomix-output.txt
+repomix-output.*

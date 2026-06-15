@@ -43,6 +43,8 @@ export default function Home() {
   const [companies, setCompanies] = useState<Company[]>([]);
   const [selectedCompany, setSelectedCompany] =
     useState<Company | null>(null);
+  const [panelOpen, setPanelOpen] =
+  useState(false);
 
   useEffect(() => {
     loadDashboardData();
@@ -64,6 +66,7 @@ export default function Home() {
         setSelectedCompany(
           companyResponse.data[0]
         );
+          setPanelOpen(true);
       }
     } catch (error) {
       console.error(
@@ -75,6 +78,8 @@ export default function Home() {
 
   return (
     <DashboardLayout
+      isPanelOpen={panelOpen}
+      onClosePanel={() => setPanelOpen(false)}
       sidebar={
         <Sidebar
           selectedCompany={selectedCompany}
@@ -83,7 +88,7 @@ export default function Home() {
       }
     >
       <div>
-        <h1 className="text-3xl font-bold mb-2">
+        <h1 className="text-3xl font-bold mb-2 ml-2">
           Board Control Rights Visualizer
         </h1>
 
@@ -91,14 +96,14 @@ export default function Home() {
           className="
             px-2 py-1 rounded-full text-xs font-medium
             bg-amber-500/20 text-amber-300
-            border border-amber-500/30
+            border border-amber-500/30 ml-2
           "
         >
           MOCK DATA
         </span>
 
-        <p className="text-slate-400 mb-8 mt-3">
-          Real Rails Intelligence Dashboard
+        <p className="text-slate-400 mb-2 mt-3 ml-2"> 
+          Board Governance Analytics & Control Rights Intelligence
         </p>
 
         <MetricsCards
@@ -117,22 +122,23 @@ export default function Home() {
         {companies.length > 0 && (
           <FilterBar
             companies={companies.map(
-              (c) => c.company
-            )}
-            selected={
-              selectedCompany?.company || ""
-            }
-            onSelect={(companyName) => {
-              const company = companies.find(
-                (c) =>
-                  c.company === companyName
-              );
+    (c) => c.company
+  )}
+  selected={
+    selectedCompany?.company || ""
+  }
+  onSelect={(companyName) => {
+    const company = companies.find(
+      (c) =>
+        c.company === companyName
+    );
 
-              if (company) {
-                setSelectedCompany(company);
-              }
-            }}
-          />
+    if (company) {
+      setSelectedCompany(company);
+      setPanelOpen(true);
+    }
+  }}
+/>
         )}
 
         <div className="space-y-6">

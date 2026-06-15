@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Board Control Rights Visualizer",
-  description: "Real Rails Intelligence Dashboard",
+  title: "Infocreon Internship - Board Control Rights Visualizer",
+  description: "Governance Analytics & Control Rights Intelligence",
 };
 
 export default function RootLayout({

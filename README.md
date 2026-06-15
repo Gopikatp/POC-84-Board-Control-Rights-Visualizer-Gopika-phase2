@@ -1,14 +1,22 @@
 # Board Control Rights Visualizer
 
+Infocreon Internship – Cinematic Intelligence Platform for visualizing board governance structures, voting power, protective rights, investor influence, and control-rights intelligence within venture-backed companies.
+
+---
+
+## Dashboard Preview
+
 ![Dashboard Preview](screenshots/dashboard.png)
 
-## Overview
+---
 
-Board Control Rights Visualizer is a governance intelligence dashboard designed to analyze how board composition, voting power, investor influence, protective rights, and governance structures affect decision-making within venture-backed companies.
+# Overview
 
-Built as part of the Real Rails Intelligence Library under the **Capital Formation Rail**, the platform helps users understand how governance control shifts between founders, investors, and independent directors as organizations progress through different funding stages.
+Board Control Rights Visualizer is a governance intelligence platform designed to analyze how board composition, voting power, investor influence, protective rights, and governance structures affect strategic decision-making within venture-backed companies.
 
-The dashboard transforms governance structures into interactive analytics, simulations, and visualizations that support governance analysis, board-control assessment, and strategic decision-making.
+Built under the Capital Formation rail, the platform helps users understand how governance control shifts between founders, investors, and independent directors throughout different funding stages.
+
+The platform transforms governance structures into interactive analytics, simulations, and visualizations that support governance analysis, board-control assessment, and strategic decision-making.
 
 ---
 
@@ -91,9 +99,9 @@ Calculates governance influence directly from board composition and visualizes:
 
 Evaluates governance quality using:
 
-* Board balance
-* Independent representation
-* Governance concentration
+* Board Balance
+* Independent Representation
+* Governance Concentration
 
 ---
 
@@ -150,7 +158,7 @@ Displays governance protections including:
 
 ---
 
-## Governance Intelligence Sidebar
+## Dynamic Governance Intelligence Panel
 
 Provides governance context through:
 
@@ -162,6 +170,8 @@ Provides governance context through:
 * Governance Timeline
 * Dataset Summary
 * Source Context
+
+The panel opens dynamically based on user interaction and can be dismissed at any time.
 
 ---
 
@@ -199,6 +209,31 @@ Allowing governance records to be downloaded for further analysis.
 
 ---
 
+# Local-to-Cloud Mirror
+
+This project has been containerized using Docker to provide a portable Linux-based runtime environment that mirrors Azure deployment behavior.
+
+### Docker Components
+
+* Frontend Container (Next.js)
+* Backend Container (FastAPI)
+* Docker Compose Orchestration
+* Linux-Based Runtime Environment
+
+### Container Validation
+
+* Frontend Container Running
+* Backend Container Running
+* API Communication Verified
+* Container Restart Validation Passed
+* Local Cloud-Mirror Environment Operational
+
+### Status
+
+**Local Container Live**
+
+---
+
 # Data Sources
 
 ## Governance Adapter Layer
@@ -233,6 +268,37 @@ Synthetic data is clearly labeled and used solely for demonstration and educatio
 
 ---
 
+# Cinematic Interface
+
+The application follows the Infocreon Cinematic Interface standard.
+
+### Full-Screen Visualization Experience
+
+* Board Seat Map
+* Voting Power Analytics
+* Governance Simulations
+* Governance Health Score
+* Control Meter
+* Scenario Comparison
+
+### Dynamic Intelligence Panel
+
+* Governance Intelligence
+* Governance Alerts
+* Governance Timeline
+* Dataset Summary
+* Source Context
+* Governance Impact
+
+### Developer Signature
+
+* Name: Gopika T P
+* PoC ID: 84
+* GitHub Username: Gopikatp
+* Batch: Batch 3 Interns
+
+---
+
 # Dashboard Architecture
 
 ## Frontend
@@ -249,7 +315,7 @@ Synthetic data is clearly labeled and used solely for demonstration and educatio
 
 * FastAPI
 * Python
-* requests
+* Requests
 
 ---
 
@@ -262,7 +328,16 @@ Synthetic data is clearly labeled and used solely for demonstration and educatio
 
 ---
 
-## Architecture Flow
+## Container Layer
+
+* Docker
+* Docker Compose
+* Multi-Stage Frontend Build
+* Linux-Based Containers
+
+---
+
+# Architecture Flow
 
 Governance Dataset
 
@@ -273,6 +348,18 @@ Governance Adapter Layer
 ↓
 
 FastAPI APIs
+
+↓
+
+Docker Backend Container
+
+↓
+
+Docker Network
+
+↓
+
+Docker Frontend Container
 
 ↓
 
@@ -288,27 +375,21 @@ User Analysis & Decision Support
 
 ---
 
-# UI & Design
-
-The dashboard follows Real Rails Intelligence design standards:
-
-* Obsidian Background (#030712)
-* Glassmorphism Cards
-* Responsive Layout
-* Governance Intelligence Sidebar
-* Consistent Dark Theme
-* Production Dashboard Structure
-
----
-
 # Project Structure
 
 ```text
-POC-84-Board-Control-Rights-Visualizer-Gopika
-│
+POC-84-Board-Control-Rights-Visualizer-Gopika-phase2
+
 ├── backend
+│   ├── Dockerfile
+│   └── .dockerignore
+│
 ├── frontend
+│   ├── Dockerfile
+│   └── .dockerignore
+│
 ├── screenshots
+├── docker-compose.yml
 ├── README.md
 ├── VAR_REPORT.md
 ├── UAT_CHECKLIST.md
@@ -325,29 +406,11 @@ POC-84-Board-Control-Rights-Visualizer-Gopika
 GET /api/metrics
 ```
 
-Returns:
-
-* Total Companies
-* Founder Controlled Companies
-* Investor Controlled Companies
-* Balanced Governance Companies
-
----
-
 ## Companies
 
 ```http
 GET /api/companies
 ```
-
-Returns:
-
-* Company Governance Records
-* Board Composition Data
-* Governance Stage Information
-* Protective Rights Information
-
----
 
 ## Rights
 
@@ -355,26 +418,50 @@ Returns:
 GET /api/rights
 ```
 
-Returns governance-right definitions used throughout the dashboard.
+---
+
+# Docker Setup
+
+## Build & Run Containers
+
+```bash
+docker compose up --build
+```
 
 ---
 
-# Local Setup
+## Stop Containers
+
+```bash
+docker compose down
+```
+
+---
+
+## Frontend
+
+```text
+http://localhost:3000
+```
+
+---
+
+## Backend
+
+```text
+http://localhost:8000
+```
+
+---
+
+# Local Setup (Non-Docker)
 
 ## Backend
 
 ```bash
 cd backend
-
 pip install -r requirements.txt
-
 uvicorn app.main:app --reload
-```
-
-Backend runs at:
-
-```text
-http://localhost:8000
 ```
 
 ---
@@ -383,16 +470,8 @@ http://localhost:8000
 
 ```bash
 cd frontend
-
 npm install
-
 npm run dev
-```
-
-Frontend runs at:
-
-```text
-http://localhost:3000
 ```
 
 ---
@@ -406,12 +485,14 @@ The repository includes:
 
 These documents validate:
 
-* Dashboard functionality
 * Governance analytics
-* User acceptance testing
 * Visualization quality
+* User interaction
+* Dynamic intelligence workflows
 * Governance simulations
-* Data-processing architecture
+* Docker containerization
+* Local cloud-mirror deployment
+* Cinematic interface compliance
 
 ---
 
@@ -421,4 +502,4 @@ These documents validate:
 
 **POC 84 – Board Control Rights Visualizer**
 
-**Real Rails Intelligence Library – Capital Formation Rail**
+**Infocreon Internship – Batch 3 Interns**

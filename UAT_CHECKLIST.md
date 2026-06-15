@@ -10,36 +10,45 @@
 
 **Theme:** Governance Intelligence & Board Control Analytics
 
-**Author:** Gopika T P
+**Tester:** Gopika T P
+
+**Batch:** Batch 3 Interns
 
 ---
 
-# User Acceptance Test Cases
+# Objective
 
-## Dashboard Initialization
-
-| Test Case                     | Expected Result                                                    | Status |
-| ----------------------------- | ------------------------------------------------------------------ | ------ |
-| Dashboard Loads               | Dashboard renders successfully without errors                      | PASS   |
-| Metrics Cards Load            | Companies, Founder Controlled, Investor Controlled metrics visible | PASS   |
-| Sidebar Loads                 | Governance intelligence sidebar renders correctly                  | PASS   |
-| Responsive Layout             | Dashboard remains usable across supported screen sizes             | PASS   |
-| Glassmorphism Styling Applied | Dashboard cards render with consistent glass-card styling          | PASS   |
+This User Acceptance Testing (UAT) checklist validates that all required functionality, governance analytics, simulations, dynamic intelligence workflows, visualizations, export capabilities, containerized deployment infrastructure, and cinematic interface requirements operate as expected.
 
 ---
 
-## Company Filter Validation
+# Dashboard Validation
 
-| Test Case                           | Expected Result                                     | Status |
-| ----------------------------------- | --------------------------------------------------- | ------ |
-| Company Filter Available            | Dropdown displays available companies               | PASS   |
-| Company Selection Updates Dashboard | Visualizations update correctly                     | PASS   |
-| Company Selection Updates Sidebar   | Sidebar intelligence updates correctly              | PASS   |
-| Multiple Company Switching          | Dashboard remains stable during repeated selections | PASS   |
+| Test Case                         | Expected Result                                    | Status |
+| --------------------------------- | -------------------------------------------------- | ------ |
+| Dashboard Loads                   | Dashboard renders successfully without errors      | PASS   |
+| Full-Screen Visualization Loads   | Cinematic interface displays correctly             | PASS   |
+| Dynamic Intelligence Panel Opens  | Panel opens correctly                              | PASS   |
+| Dynamic Intelligence Panel Closes | Panel closes correctly                             | PASS   |
+| Professional Dark Theme           | High contrast styling displayed correctly          | PASS   |
+| Responsive Layout                 | Dashboard remains usable on supported screen sizes | PASS   |
+| Developer Signature Modal         | Metadata modal opens correctly                     | PASS   |
+| Infocreon Branding Visible        | Branding displayed correctly                       | PASS   |
 
 ---
 
-## Board Seat Map Validation
+# Company Filter Validation
+
+| Test Case                                    | Expected Result                       | Status |
+| -------------------------------------------- | ------------------------------------- | ------ |
+| Company Filter Available                     | Dropdown displays available companies | PASS   |
+| Company Selection Updates Dashboard          | Visualizations update correctly       | PASS   |
+| Company Selection Updates Intelligence Panel | Panel updates correctly               | PASS   |
+| Multiple Company Switching                   | Dashboard remains stable              | PASS   |
+
+---
+
+# Board Seat Map Validation
 
 | Test Case                   | Expected Result                    | Status |
 | --------------------------- | ---------------------------------- | ------ |
@@ -51,7 +60,7 @@
 
 ---
 
-## Voting Power Breakdown Validation
+# Voting Power Breakdown Validation
 
 | Test Case                           | Expected Result                | Status |
 | ----------------------------------- | ------------------------------ | ------ |
@@ -62,229 +71,176 @@
 
 ---
 
-## Board Majority Analysis Validation
+# Board Majority Analysis Validation
 
-| Test Case                      | Expected Result                           | Status |
-| ------------------------------ | ----------------------------------------- | ------ |
-| Total Seats Calculation        | Total board seats calculated correctly    | PASS   |
-| Majority Threshold Calculation | Majority requirement calculated correctly | PASS   |
-| Majority Classification        | Governance majority identified correctly  | PASS   |
-| Dynamic Updates                | Analysis updates correctly                | PASS   |
-
----
-
-## Founder vs Investor Control Meter Validation
-
-| Test Case                  | Expected Result                              | Status |
-| -------------------------- | -------------------------------------------- | ------ |
-| Founder Influence Visible  | Founder control displayed correctly          | PASS   |
-| Investor Influence Visible | Investor control displayed correctly         | PASS   |
-| Seat-Based Calculation     | Control percentages derived from board seats | PASS   |
-| Dynamic Updates            | Meter updates when company changes           | PASS   |
+| Test Case                      | Expected Result                          | Status |
+| ------------------------------ | ---------------------------------------- | ------ |
+| Total Seats Calculation        | Correctly calculated                     | PASS   |
+| Majority Threshold Calculation | Correctly calculated                     | PASS   |
+| Majority Classification        | Governance majority identified correctly | PASS   |
+| Dynamic Updates                | Analysis updates correctly               | PASS   |
 
 ---
 
-## Governance Health Score Validation
+# Governance Health Score Validation
+
+| Test Case                    | Expected Result                        | Status |
+| ---------------------------- | -------------------------------------- | ------ |
+| Governance Score Calculation | Score generated correctly              | PASS   |
+| Governance Classification    | Status displayed correctly             | PASS   |
+| Governance Indicator Visible | Visible and readable                   | PASS   |
+| Dynamic Updates              | Updates correctly when company changes | PASS   |
+
+---
+
+# Decision Approval Simulator Validation
+
+| Test Case             | Expected Result                        | Status |
+| --------------------- | -------------------------------------- | ------ |
+| Simulator Visible     | Simulator renders correctly            | PASS   |
+| Budget Approval Logic | Functions correctly                    | PASS   |
+| New Financing Logic   | Functions correctly                    | PASS   |
+| Acquisition Logic     | Functions correctly                    | PASS   |
+| Board Expansion Logic | Functions correctly                    | PASS   |
+| Threshold Calculation | Correctly updates                      | PASS   |
+| Result Display        | Approval/rejection displayed correctly | PASS   |
+
+---
+
+# Scenario Compare Validation
+
+| Test Case                       | Expected Result     | Status |
+| ------------------------------- | ------------------- | ------ |
+| Current Governance Displayed    | Visible             | PASS   |
+| Proposed Governance Displayed   | Visible             | PASS   |
+| Governance Simulation Available | Generated correctly | PASS   |
+| Governance Outcome Displayed    | Visible             | PASS   |
+
+---
+
+# Governance Timeline Validation
+
+| Test Case                 | Expected Result           | Status |
+| ------------------------- | ------------------------- | ------ |
+| Timeline Visible          | Displayed correctly       | PASS   |
+| Current Stage Highlighted | Correct stage highlighted | PASS   |
+| Seed Stage Supported      | PASS                      | PASS   |
+| Series A Supported        | PASS                      | PASS   |
+| Series B Supported        | PASS                      | PASS   |
+| IPO Supported             | PASS                      | PASS   |
+
+---
+
+# Governance Intelligence Validation
+
+| Test Case                       | Expected Result                   | Status |
+| ------------------------------- | --------------------------------- | ------ |
+| Why This Matters Visible        | Governance context displayed      | PASS   |
+| Who Controls The Rail Visible   | Stakeholder explanation displayed | PASS   |
+| Governance Intelligence Visible | Governance insights displayed     | PASS   |
+| Governance Impact Visible       | Governance impact displayed       | PASS   |
+| Governance Alerts Visible       | Alerts displayed correctly        | PASS   |
+| Dataset Summary Visible         | Governance statistics displayed   | PASS   |
+| Source Context Visible          | Data-source explanation displayed | PASS   |
+
+---
+
+# Export Validation
+
+| Test Case            | Expected Result          | Status |
+| -------------------- | ------------------------ | ------ |
+| JSON Export Visible  | JSON download available  | PASS   |
+| CSV Export Visible   | CSV download available   | PASS   |
+| JSON Export Works    | Downloads successfully   | PASS   |
+| CSV Export Works     | Downloads successfully   | PASS   |
+| Export Content Valid | Matches selected company | PASS   |
+
+---
+
+# API Validation
+
+| Test Case          | Expected Result                       | Status |
+| ------------------ | ------------------------------------- | ------ |
+| GET /api/metrics   | Metrics returned successfully         | PASS   |
+| GET /api/companies | Company dataset returned successfully | PASS   |
+| GET /api/rights    | Rights dataset returned successfully  | PASS   |
+| Response Time      | No noticeable delay                   | PASS   |
+
+---
+
+# Container Deployment Validation
 
 | Test Case                         | Expected Result                         | Status |
 | --------------------------------- | --------------------------------------- | ------ |
-| Governance Score Visible          | Score displayed correctly               | PASS   |
-| Governance Classification Visible | Governance status displayed             | PASS   |
-| Dynamic Updates                   | Score updates based on selected company | PASS   |
+| Docker Compose Build              | Containers created successfully         | PASS   |
+| Backend Container Startup         | FastAPI service starts successfully     | PASS   |
+| Frontend Container Startup        | Next.js application starts successfully | PASS   |
+| Container Networking              | Services communicate successfully       | PASS   |
+| API Requests Return 200 OK        | Successful responses received           | PASS   |
+| Dashboard Loads Inside Container  | Application accessible via browser      | PASS   |
+| Frontend ↔ Backend Communication  | Data loads successfully                 | PASS   |
+| Docker Restart Test               | Containers restart successfully         | PASS   |
+| Local Cloud-Mirror Validation     | Environment operational                 | PASS   |
+| Docker Desktop Validation         | Containers healthy and running          | PASS   |
+| Local Container Live Verification | Complete stack operational              | PASS   |
 
 ---
 
-## Decision Approval Simulator Validation
+# Developer Signature Validation
 
-| Test Case                   | Expected Result                                   | Status |
-| --------------------------- | ------------------------------------------------- | ------ |
-| Simulator Visible           | Simulator renders correctly                       | PASS   |
-| Budget Approval Logic       | Uses budget approval threshold correctly          | PASS   |
-| New Financing Logic         | Uses financing approval threshold correctly       | PASS   |
-| Acquisition Logic           | Uses acquisition approval threshold correctly     | PASS   |
-| Board Expansion Logic       | Uses board expansion approval threshold correctly | PASS   |
-| Threshold Calculation       | Vote threshold updates by decision type           | PASS   |
-| Supporting Group Displayed  | Supporting voting group displayed correctly       | PASS   |
-| Governance Right Validation | Required governance right evaluated correctly     | PASS   |
-| Result Display              | Approval or rejection displayed correctly         | PASS   |
-
----
-
-## Scenario Compare Validation
-
-| Test Case                       | Expected Result                                  | Status |
-| ------------------------------- | ------------------------------------------------ | ------ |
-| Current Governance Displayed    | Current board structure visible                  | PASS   |
-| Proposed Governance Displayed   | Proposed board structure visible                 | PASS   |
-| Governance Simulation Available | Proposed governance scenario generated correctly | PASS   |
-| Governance Outcome Displayed    | Governance control outcome displayed             | PASS   |
-| Dynamic Updates                 | Scenario updates when company changes            | PASS   |
-
----
-
-## Governance Timeline Validation
-
-| Test Case                 | Expected Result                            | Status |
-| ------------------------- | ------------------------------------------ | ------ |
-| Timeline Visible          | Governance timeline displayed              | PASS   |
-| Current Stage Highlighted | Selected company stage highlighted         | PASS   |
-| Seed Stage Supported      | Stage rendered correctly                   | PASS   |
-| Series A Supported        | Stage rendered correctly                   | PASS   |
-| Series B Supported        | Stage rendered correctly                   | PASS   |
-| IPO Supported             | Stage rendered correctly                   | PASS   |
-| Dynamic Updates           | Timeline updates based on selected company | PASS   |
-
----
-
-## Protective Rights Validation
-
-| Test Case                        | Expected Result                    | Status |
-| -------------------------------- | ---------------------------------- | ------ |
-| Rights Checklist Visible         | Governance rights displayed        | PASS   |
-| Budget Approval Rights Displayed | Rights rendered correctly          | PASS   |
-| Financing Rights Displayed       | Rights rendered correctly          | PASS   |
-| Board Approval Rights Displayed  | Rights rendered correctly          | PASS   |
-| Dynamic Updates                  | Rights update when company changes | PASS   |
-
----
-
-## Governance Intelligence Validation
-
-| Test Case                       | Expected Result                              | Status |
-| ------------------------------- | -------------------------------------------- | ------ |
-| Why This Matters Visible        | Governance context displayed                 | PASS   |
-| Who Controls The Rail Visible   | Governance stakeholder explanation displayed | PASS   |
-| Governance Intelligence Visible | Governance insights displayed                | PASS   |
-| Governance Impact Visible       | Proposed governance impact displayed         | PASS   |
-| Dataset Summary Visible         | Governance statistics displayed              | PASS   |
-| Source Context Visible          | Data-source explanation displayed            | PASS   |
-
----
-
-## Governance Alerts Validation
-
-| Test Case                  | Expected Result                         | Status |
-| -------------------------- | --------------------------------------- | ------ |
-| Governance Alerts Visible  | Alert panel displayed                   | PASS   |
-| Founder Majority Alert     | Appears when founder majority exists    | PASS   |
-| Investor Majority Alert    | Appears when investor majority exists   | PASS   |
-| Protective Rights Alert    | Appears when protective rights exist    | PASS   |
-| Independent Director Alert | Appears when independent seats exist    | PASS   |
-| Dynamic Updates            | Alerts update based on selected company | PASS   |
-
----
-
-## Data Source Status Validation
-
-| Test Case                         | Expected Result                           | Status |
-| --------------------------------- | ----------------------------------------- | ------ |
-| Source Status Card Visible        | Data source card displayed                | PASS   |
-| Synthetic Fallback Badge Visible  | Status badge displayed correctly          | PASS   |
-| Adapter Layer Description Visible | Architecture explanation displayed        | PASS   |
-| Source Transparency Provided      | Data source information clearly disclosed | PASS   |
-
----
-
-## Dataset Summary Validation
-
-| Test Case                 | Expected Result                 | Status |
-| ------------------------- | ------------------------------- | ------ |
-| Company Count Visible     | API company count displayed     | PASS   |
-| Founder Controlled Count  | API founder count displayed     | PASS   |
-| Investor Controlled Count | API investor count displayed    | PASS   |
-| Balanced Governance Count | API balanced count displayed    | PASS   |
-| Dynamic Metrics           | Summary populated from API data | PASS   |
-
----
-
-## Export Validation
-
-| Test Case            | Expected Result                        | Status |
-| -------------------- | -------------------------------------- | ------ |
-| JSON Export Visible  | JSON download button visible           | PASS   |
-| CSV Export Visible   | CSV download button visible            | PASS   |
-| JSON Export Works    | Governance JSON downloads successfully | PASS   |
-| CSV Export Works     | Structured CSV downloads successfully  | PASS   |
-| Export Content Valid | Exported data matches selected company | PASS   |
-
----
-
-## Tooltip Validation
-
-| Test Case                | Expected Result                 | Status |
-| ------------------------ | ------------------------------- | ------ |
-| Tooltip Displays         | Tooltip appears on hover        | PASS   |
-| Tooltip Content Accurate | Information displayed correctly | PASS   |
-
----
-
-## API Validation
-
-| Test Case                           | Expected Result                                    | Status |
-| ----------------------------------- | -------------------------------------------------- | ------ |
-| GET /api/metrics                    | Metrics returned successfully                      | PASS   |
-| GET /api/companies                  | Company dataset returned successfully              | PASS   |
-| GET /api/rights                     | Rights dataset returned successfully               | PASS   |
-| Response Time                       | Data loads without noticeable delay                | PASS   |
-| Balanced Governance Metric Returned | Metrics endpoint returns balanced governance count | PASS   |
-
----
-
-## Adapter & Fallback Validation
-
-| Test Case                    | Expected Result                          | Status |
-| ---------------------------- | ---------------------------------------- | ------ |
-| Governance Adapter Loads     | Adapter service initializes correctly    | PASS   |
-| Synthetic Dataset Available  | Governance dataset loads successfully    | PASS   |
-| Fallback Mechanism Available | Fallback architecture operational        | PASS   |
-| Data Source Status Displayed | Source transparency visible in dashboard | PASS   |
-
----
-
----
-
-## Backend Infrastructure Validation
-
-| Test Case                        | Expected Result                                     | Status |
-| -------------------------------- | --------------------------------------------------- | ------ |
-| FastAPI Server Starts            | Backend service starts successfully                 | PASS   |
-| CORS Configuration Active        | Frontend communicates with backend successfully     | PASS   |
-| Requests Dependency Installed    | SEC EDGAR adapter imports successfully              | PASS   |
-| Governance Adapter Loads         | Adapter initializes without errors                  | PASS   |
-| SEC EDGAR Adapter Stub Available | Adapter service available for future integration    | PASS   |
-| Synthetic Fallback Triggered     | Synthetic dataset loads when EDGAR data unavailable | PASS   |
-| API Routes Registered            | All governance endpoints accessible                 | PASS   |
-| Backend Response Stable          | No runtime errors during dashboard operations       | PASS   |
+| Test Case                   | Expected Result            | Status |
+| --------------------------- | -------------------------- | ------ |
+| Developer Name Displayed    | Correct name displayed     | PASS   |
+| PoC ID Displayed            | Correct PoC ID displayed   | PASS   |
+| GitHub Username Displayed   | Correct username displayed | PASS   |
+| Batch Information Displayed | Correct batch displayed    | PASS   |
+| Technology Stack Displayed  | Correct stack displayed    | PASS   |
 
 ---
 
 # Final Acceptance Criteria
 
-## Functional Requirements
+### Functional Requirements
 
 * Dashboard loads successfully
 * Governance analytics operate correctly
 * Interactive filtering works
 * Governance simulations execute correctly
-* Intelligence panels update dynamically
-* Timeline updates dynamically
+* Intelligence workflows update dynamically
 * Alerts update dynamically
 * Export functionality works
 * Visualizations render correctly
-* Data source transparency available
+* Dynamic Intelligence Panel operational
+* Docker containers operate correctly
+* Frontend and backend communication verified
+* Container restart validation successful
 
 **Status:** PASS
 
 ---
 
-## User Experience Requirements
+### User Experience Requirements
 
 * Clear visual hierarchy
-* Consistent Real Rails design language
-* Obsidian theme compliance (#030712)
-* Glassmorphism dashboard styling
-* Responsive dashboard layout
-* Intuitive navigation and interaction
+* Professional cinematic interface
+* High contrast dark theme
+* Responsive layout
+* Intuitive navigation
+* Developer Signature compliance
+* Infocreon branding compliance
+
+**Status:** PASS
+
+---
+
+### Deployment Requirements
+
+* Docker Compose configured
+* Frontend container operational
+* Backend container operational
+* Container networking operational
+* Local cloud-mirror environment validated
+* Cloud-ready deployment architecture verified
 
 **Status:** PASS
 
@@ -292,6 +248,20 @@
 
 # Final Result
 
-All governance intelligence, visualization, analytics, simulation, filtering, export, adapter-layer, governance transparency, backend infrastructure, and interaction requirements have been successfully tested and validated.
+All governance intelligence, visualization, analytics, simulation, filtering, export, interaction, intelligence workflows, deployment infrastructure, containerization, cinematic interface requirements, and architectural requirements have been successfully tested and validated.
 
 ## Overall UAT Status: PASS
+
+---
+
+# Sign-off
+
+**Tester:** Gopika T P
+
+**PoC ID:** 84
+
+**Status:** APPROVED
+
+**Local Container Live:** VERIFIED
+
+**Ready for Cloud Deployment Preparation:** YES

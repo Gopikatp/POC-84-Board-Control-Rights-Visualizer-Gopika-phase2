@@ -1,0 +1,11 @@
+POC 84 Selenium Test Report
+=============================================
+
+PASS - Page Loaded
+PASS - Dashboard Title
+PASS - Metrics Cards
+PASS - Board Seat Map
+PASS - Control Meter
+PASS - Decision Simulator
+PASS - Intelligence Panel Opened
+PASS - Backend API

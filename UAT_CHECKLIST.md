@@ -196,6 +196,20 @@ This User Acceptance Testing (UAT) checklist validates that all required functio
 
 ---
 
+## Selenium Automation Checklist
+
+* [x] Application launches successfully
+* [x] Dashboard renders correctly
+* [x] Metrics cards display correctly
+* [x] Board Seat Map renders correctly
+* [x] Control Meter renders correctly
+* [x] Decision Simulator functions correctly
+* [x] Governance Intelligence Panel interaction verified
+* [x] Backend API communication verified
+* [x] Automated Selenium execution completed successfully
+
+---
+
 # Final Acceptance Criteria
 
 ### Functional Requirements

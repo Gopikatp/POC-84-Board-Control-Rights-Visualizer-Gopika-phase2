@@ -291,6 +291,39 @@ The platform transforms governance structures into actionable intelligence throu
 
 ---
 
+## Selenium Automation Validation
+
+### Validation Environment
+
+| Item                 | Value                |
+| -------------------- | -------------------- |
+| Frontend             | Azure Container Apps |
+| Backend              | Azure Container Apps |
+| Browser              | Google Chrome        |
+| Automation Framework | Selenium WebDriver   |
+| Language             | Python               |
+
+### Automated Validation Results
+
+| Test                          | Result |
+| ----------------------------- | ------ |
+| Page Load                     | PASS   |
+| Dashboard Title               | PASS   |
+| Metrics Cards                 | PASS   |
+| Board Seat Map                | PASS   |
+| Control Meter                 | PASS   |
+| Decision Simulator            | PASS   |
+| Governance Intelligence Panel | PASS   |
+| Backend API Connectivity      | PASS   |
+
+### Overall Result
+
+PASS
+
+The deployed application successfully passed all automated Selenium end-to-end validation scenarios.
+
+---
+
 # Final Assessment
 
 The Board Control Rights Visualizer successfully satisfies the Infocreon Cinematic Interface requirements for POC 84 under the Capital Formation rail.

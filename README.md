@@ -290,6 +290,36 @@ The application follows the Infocreon Cinematic Interface standard.
 * Source Context
 * Governance Impact
 
+## Selenium End-to-End Testing
+
+The deployed Azure application was validated using Selenium WebDriver against the live Azure Container Apps deployment.
+
+### Automated Test Coverage
+
+* Page Load Verification
+* Dashboard Title Verification
+* Metrics Cards Validation
+* Board Seat Map Rendering
+* Founder vs Investor Control Meter Rendering
+* Decision Approval Simulator Validation
+* Governance Intelligence Panel Interaction
+* Backend API Handshake Validation
+
+### Test Environment
+
+* Frontend: Azure Container Apps
+* Backend: Azure Container Apps
+* Browser: Google Chrome
+* Framework: Selenium WebDriver
+* Language: Python
+
+### Test Result
+
+All automated validation tests completed successfully.
+
+**Status:** PASS
+
+
 ### Developer Signature
 
 * Name: Gopika T P
@@ -386,7 +416,8 @@ POC-84-Board-Control-Rights-Visualizer-Gopika-phase2
 │   ├── Dockerfile
 │   └── .dockerignore
 │
-├── screenshots
+├── screenshots/
+├── selenium/
 ├── docker-compose.yml
 ├── README.md
 ├── VAR_REPORT.md

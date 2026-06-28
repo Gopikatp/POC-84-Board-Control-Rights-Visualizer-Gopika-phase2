@@ -226,8 +226,6 @@ The platform transforms governance structures into actionable intelligence throu
 | Requirement                 | Status |
 | --------------------------- | ------ |
 | Developer Name Displayed    | PASS   |
-| PoC ID Displayed            | PASS   |
-| GitHub Username Displayed   | PASS   |
 | Batch Information Displayed | PASS   |
 | Technology Stack Displayed  | PASS   |
 | Metadata Modal Functional   | PASS   |

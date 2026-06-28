@@ -191,8 +191,6 @@ This User Acceptance Testing (UAT) checklist validates that all required functio
 | Test Case                   | Expected Result            | Status |
 | --------------------------- | -------------------------- | ------ |
 | Developer Name Displayed    | Correct name displayed     | PASS   |
-| PoC ID Displayed            | Correct PoC ID displayed   | PASS   |
-| GitHub Username Displayed   | Correct username displayed | PASS   |
 | Batch Information Displayed | Correct batch displayed    | PASS   |
 | Technology Stack Displayed  | Correct stack displayed    | PASS   |
 

@@ -293,8 +293,6 @@ The application follows the Infocreon Cinematic Interface standard.
 ### Developer Signature
 
 * Name: Gopika T P
-* PoC ID: 84
-* GitHub Username: Gopikatp
 * Batch: Batch 3 Interns
 
 ---

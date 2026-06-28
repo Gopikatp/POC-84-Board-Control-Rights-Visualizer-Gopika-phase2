@@ -98,7 +98,10 @@ export default function DecisionSimulator({
     );
 
   return (
-    <div className="glass-card p-6 text-white">
+    <div 
+      id="decision-simulator"
+      data-testid="decision-simulator"
+      className="glass-card p-6 text-white">
       <h2 className="text-xl font-semibold mb-4">
         Decision Approval Simulator
       </h2>

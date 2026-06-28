@@ -46,7 +46,10 @@ export default function BoardSeatMap({
   ];
 
   return (
-    <div className="glass-card p-6 text-white">
+    <div 
+      id="board-seat-map"
+      data-testid="board-seat-map"
+      className="glass-card p-6 text-white">
       <h2 className="text-xl font-semibold mb-4">
         Board Seat Map
       </h2>

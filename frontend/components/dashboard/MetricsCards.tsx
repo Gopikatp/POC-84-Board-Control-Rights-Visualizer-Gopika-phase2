@@ -19,7 +19,10 @@ export default function MetricsCards({
 }: Props) {
   return (
     <div className="grid grid-cols-4 gap-4 mb-6">
-      <div className="glass-card p-4">
+      <div 
+        id="metrics-cards"
+        className="glass-card p-4"
+      >
         <Tooltip>
           <TooltipTrigger asChild>
             <h3 className="text-slate-400 cursor-help">
@@ -37,7 +40,10 @@ export default function MetricsCards({
         </p>
       </div>
 
-      <div className="glass-card p-4">
+      <div 
+        id="founder-card" 
+        className="glass-card p-4"
+      >
         <Tooltip>
           <TooltipTrigger asChild>
             <h3 className="text-slate-400 cursor-help">
@@ -55,7 +61,10 @@ export default function MetricsCards({
         </p>
       </div>
 
-      <div className="glass-card p-4">
+      <div 
+        id="investor-card"
+        className="glass-card p-4"
+      >
         <Tooltip>
           <TooltipTrigger asChild>
             <h3 className="text-slate-400 cursor-help">
@@ -73,7 +82,10 @@ export default function MetricsCards({
         </p>
       </div>
 
-      <div className="glass-card p-4">
+      <div 
+        id="balanced-card" 
+        className="glass-card p-4"
+      >
         <Tooltip>
           <TooltipTrigger asChild>
             <h3 className="text-slate-400 cursor-help">

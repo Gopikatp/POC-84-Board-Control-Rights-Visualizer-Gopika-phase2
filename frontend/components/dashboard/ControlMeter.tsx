@@ -28,7 +28,10 @@ const investorControl = Math.round(
 );
 
   return (
-    <div className="glass-card p-6 text-white">
+    <div 
+      id="control-meter"
+      data-testid="control-meter"
+      className="glass-card p-6 text-white">
       <h2 className="text-xl font-semibold mb-6">
         Founder vs Investor Control
       </h2>

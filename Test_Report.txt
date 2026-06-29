@@ -1,11 +1,45 @@
-POC 84 Selenium Test Report
-=============================================
+========================================================================
+  INFOCREON PoC 84 -- UAT Test Report
+  Board Control Rights Visualizer
+------------------------------------------------------------------------
+  Target URL : https://board-frontend.calmcoast-c9142dd2.centralindia.azurecontainerapps.io
+  Run At     : 2026-06-28 23:12:54
+  Execution  : 47.19 sec
+  Total Tests: 8  |  PASSED: 8  |  FAILED: 0  |  SKIPPED: 0
+========================================================================
 
-PASS - Page Loaded
-PASS - Dashboard Title
-PASS - Metrics Cards
-PASS - Board Seat Map
-PASS - Control Meter
-PASS - Decision Simulator
-PASS - Intelligence Panel Opened
-PASS - Backend API
+  [+] [PASS]   TC-1 | Page Load
+       Detail : Application loaded successfully.
+
+  [+] [PASS]   TC-2 | Dashboard Title
+       Detail : Dashboard title verified.
+
+  [+] [PASS]   TC-3 | Metrics Cards
+       Detail : Governance metrics rendered successfully.
+
+  [+] [PASS]   TC-4 | Board Seat Map
+       Detail : Board Seat Map rendered successfully.
+
+  [+] [PASS]   TC-5 | Founder vs Investor Control Meter
+       Detail : Control meter rendered successfully.
+
+  [+] [PASS]   TC-6 | Decision Simulator
+       Detail : Decision Approval Simulator rendered successfully.
+
+  [+] [PASS]   TC-7 | Governance Intelligence Panel
+       Detail : Governance Intelligence Panel opened successfully.
+
+  [+] [PASS]   TC-8 | Backend API Handshake
+       Detail : GET /api/metrics returned HTTP 200.
+
+------------------------------------------------------------------------
+  OVERALL VERDICT : [PASS] ALL TESTS PASSED
+========================================================================
+
+  Notes:
+  - Selenium WebDriver executed against the live Azure deployment.
+  - Governance dashboard rendered successfully.
+  - Governance Intelligence Panel validated.
+  - Backend API connectivity verified successfully.
+  - Report generated automatically by test_poc84.py
+========================================================================
